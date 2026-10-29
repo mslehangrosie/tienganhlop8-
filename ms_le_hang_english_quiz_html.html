@@ -1,0 +1,2277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ms Lê Hằng English - Đề Cương Ôn Tập Giữa HK1 Global Success 8</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        nunito: ['Nunito', 'sans-serif'],
+                    },
+                    colors: {
+                        brandPurple: '#8854C0',
+                        brandYellow: '#FDCB6E',
+                        brandTeal: '#00C9A7',
+                        correctGreen: '#00D26A',
+                        wrongRed: '#FF4757',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(-45deg, #8854C0, #ee7752, #e73c7e, #23a6d5, #00C9A7, #FDCB6E);
+            background-size: 400% 400%;
+            animation: gradientBG 18s ease infinite;
+            min-height: 100vh;
+            color: #2d3748;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating SVG Pattern Overlay */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.15;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FFFFFF'%3E%3Cpath d='M11 18l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4-2.9-2.8 4-.6z'/%3E%3Ccircle cx='70' cy='30' r='5'/%3E%3Cpath d='M80 75c-2 0-3.5-1.5-3.5-3.5s1.5-3.5 3.5-3.5 3.5 1.5 3.5 3.5-1.5 3.5-3.5 3.5zm-5-3.5c0 1.1.9 2 2 2s2-.9 2-2-.9-2-2-2-2 .9-2 2z'/%3E%3Cpath d='M30 80l2 4 4.5.6-3.2 3.2.8 4.4-4.1-2.2-4.1 2.2.8-4.4-3.2-3.2 4.5-.6z'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Gamified 3D Push Button */
+        .btn-3d {
+            transition: all 0.1s ease;
+            box-shadow: 0 5px 0 rgba(0,0,0,0.15);
+            position: relative;
+            top: 0;
+        }
+        .btn-3d:active {
+            top: 4px;
+            box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+        }
+
+        .option-btn {
+            box-shadow: 0 4px 0 #CBD5E1;
+            border: 2px solid #E2E8F0;
+            transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .option-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #CBD5E1;
+            border-color: #94A3B8;
+        }
+        .option-btn:active:not(:disabled) {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #CBD5E1;
+        }
+
+        /* Correct and Wrong Animation states */
+        .option-correct {
+            background-color: #00D26A !important;
+            color: white !important;
+            border-color: #00B159 !important;
+            box-shadow: 0 4px 0 #008F47 !important;
+        }
+        .option-wrong {
+            background-color: #FF4757 !important;
+            color: white !important;
+            border-color: #E03141 !important;
+            box-shadow: 0 4px 0 #B81D2C !important;
+            animation: shake 0.4s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        /* Underline styling for Phonetics */
+        u {
+            text-decoration: underline;
+            text-decoration-color: #FF4757;
+            text-decoration-thickness: 3px;
+            text-underline-offset: 3px;
+            font-weight: 800;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.2);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.5);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.8);
+        }
+    </style>
+</head>
+<body class="relative pb-16">
+    <div class="bg-pattern"></div>
+
+    <!-- MAIN CONTAINER -->
+    <div class="relative z-10 max-w-4xl mx-auto px-4 py-6">
+
+        <!-- HEADER SECTION -->
+        <header class="text-center mb-6 bg-white/90 backdrop-blur-md p-4 sm:p-6 rounded-3xl shadow-xl border-4 border-white/60">
+            <div class="inline-block bg-purple-100 text-purple-800 text-xs sm:text-sm font-extrabold px-3 py-1 rounded-full mb-2 shadow-sm">
+                🎓 Giáo viên tạo: Ms Lê Hằng English
+            </div>
+            <h1 class="text-xl sm:text-2xl font-black text-gray-800 tracking-tight leading-snug">
+                ĐỀ CƯƠNG ÔN TẬP GIỮA HỌC KỲ I - GLOBAL SUCCESS 8
+            </h1>
+            <p class="text-xs sm:text-sm font-bold text-amber-600 mt-1 bg-amber-50 py-1 px-3 rounded-lg border border-amber-200 inline-block">
+                📞 Đăng kí học tiếng Anh 1-12, IELTS vui lòng liên hệ Ms Lê Hằng, Zalo: <span class="text-red-600 font-extrabold">0584 965 348</span>
+            </p>
+        </header>
+
+        <!-- WARNING BANNER BOX -->
+        <div class="mb-6 bg-gradient-to-r from-red-500 via-orange-500 to-amber-500 p-1 rounded-2xl shadow-lg animate-pulse">
+            <div class="bg-white rounded-xl p-4 text-gray-800 text-sm sm:text-base leading-relaxed">
+                <div class="flex items-center gap-2 text-red-600 font-black text-base sm:text-lg mb-1">
+                    <i class="fa-solid fa-triangle-exclamation text-xl"></i>
+                    <span>⚠️ LỜI NHẮC CỰC KỲ QUAN TRỌNG ⚠️</span>
+                </div>
+                <p class="font-bold text-gray-700">
+                    Chỉ có <span class="text-red-600 underline decoration-2">đọc kỹ giải thích ngay sau mỗi câu</span>, sau đó ghi lại từ vựng/cấu trúc mới vào vở để học thì mới thực sự giỏi lên!
+                </p>
+                <p class="text-xs sm:text-sm text-gray-500 mt-1 italic">
+                    Làm cho xong mà không đọc giải thích hay đọc qua loa không ghi chép thì chỉ tốn thời gian vô ích! <strong>Kéo tới đâu, làm tới đó!</strong>
+                </p>
+            </div>
+        </div>
+
+        <!-- STICKY SCORE BAR -->
+        <div class="sticky top-4 z-50 mb-6 bg-white/95 backdrop-blur-md rounded-2xl p-3 sm:p-4 shadow-xl border-2 border-purple-200 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center font-black text-lg shadow-md">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div>
+                    <div class="text-xs text-gray-500 font-bold uppercase tracking-wider">Tiến độ làm bài</div>
+                    <div class="text-sm sm:text-base font-extrabold text-gray-800" id="progress-text">Đã hoàn thành: 0 / 120</div>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="text-right hidden sm:block">
+                    <div class="text-xs text-gray-500 font-bold">Điểm hiện tại</div>
+                    <div class="text-lg font-black text-green-600" id="live-score">0 đ</div>
+                </div>
+                <button onclick="submitQuiz()" class="btn-3d bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-black px-4 py-2 sm:px-6 sm:py-2.5 rounded-xl text-sm sm:text-base flex items-center gap-2 shadow-lg">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Nộp bài</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- PART A: CORE KNOWLEDGE SUMMARY (EXPANDABLE CARD) -->
+        <div class="mb-8 bg-white rounded-3xl p-5 sm:p-6 shadow-xl border-4 border-amber-300">
+            <button onclick="toggleSummary()" class="w-full flex items-center justify-between text-left focus:outline-none">
+                <div class="flex items-center gap-3">
+                    <span class="w-10 h-10 rounded-full bg-amber-400 text-amber-900 font-black flex items-center justify-center text-lg shadow-inner">📖</span>
+                    <div>
+                        <h2 class="text-lg sm:text-xl font-black text-gray-800">PART A. CORE KNOWLEDGE SUMMARY</h2>
+                        <p class="text-xs sm:text-sm text-gray-500 font-semibold">Tóm tắt kiến thức cốt lõi Unit 1, 2 & 3 (Nhấn để xem/ẩn)</p>
+                    </div>
+                </div>
+                <i id="summary-chevron" class="fa-solid fa-chevron-down text-xl text-amber-600 transition-transform duration-300"></i>
+            </button>
+
+            <div id="summary-content" class="hidden mt-6 pt-6 border-t border-amber-100 text-sm space-y-6">
+                <!-- Unit 1 -->
+                <div class="bg-amber-50/60 p-4 rounded-2xl border border-amber-200">
+                    <h3 class="font-black text-amber-800 text-base mb-2">UNIT 1: LEISURE TIME</h3>
+                    <p class="font-bold text-gray-700 mb-2">• Vocabulary & Expressions:</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-600 mb-3">
+                        <li><span class="font-bold">leisure time:</span> thời gian rảnh</li>
+                        <li><span class="font-bold">do DIY:</span> tự làm / sửa đồ dùng</li>
+                        <li><span class="font-bold">knit / knitting:</span> đan len</li>
+                        <li><span class="font-bold">be keen on / fond of / crazy about:</span> rất thích / mê</li>
+                        <li><span class="font-bold">prefer A to B:</span> thích A hơn B</li>
+                        <li><span class="font-bold">detest / dislike / hate:</span> ghét / không thích</li>
+                    </ul>
+                    <p class="font-bold text-gray-700 mb-1">• Grammar:</p>
+                    <p class="text-xs text-gray-600">
+                        - V + V-ing: <em>enjoy, fancy, detest, dislike + V-ing</em> (e.g. She enjoys reading).<br>
+                        - V + V-ing / to V: <em>like, love, hate, prefer + V-ing / to V</em>.<br>
+                        - Phụ âm: /ʊ/ (cook, push) vs /uː/ (school, June).
+                    </p>
+                </div>
+
+                <!-- Unit 2 -->
+                <div class="bg-emerald-50/60 p-4 rounded-2xl border border-emerald-200">
+                    <h3 class="font-black text-emerald-800 text-base mb-2">UNIT 2: LIFE IN THE COUNTRYSIDE</h3>
+                    <p class="font-bold text-gray-700 mb-2">• Vocabulary & Expressions:</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-600 mb-3">
+                        <li><span class="font-bold">paddy field:</span> ruộng lúa</li>
+                        <li><span class="font-bold">herd of cattle:</span> đàn gia súc</li>
+                        <li><span class="font-bold">combine harvester:</span> máy gặt đập liên hợp</li>
+                        <li><span class="font-bold">load / unload rice:</span> chất / dỡ lúa</li>
+                        <li><span class="font-bold">picturesque:</span> đẹp như tranh</li>
+                        <li><span class="font-bold">hospitable:</span> hiếu khách</li>
+                    </ul>
+                    <p class="font-bold text-gray-700 mb-1">• Grammar:</p>
+                    <p class="text-xs text-gray-600">
+                        - Comparative of adverbs: Trạng từ ngắn + -er (fast -> faster); More + trạng từ dài + than (more quietly than); Bất quy tắc: well -> better, badly -> worse.<br>
+                        - Phụ âm: /ə/ (farmer) vs /ɪ/ (village).
+                    </p>
+                </div>
+
+                <!-- Unit 3 -->
+                <div class="bg-blue-50/60 p-4 rounded-2xl border border-blue-200">
+                    <h3 class="font-black text-blue-800 text-base mb-2">UNIT 3: TEENAGERS</h3>
+                    <p class="font-bold text-gray-700 mb-2">• Vocabulary & Expressions:</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-600 mb-3">
+                        <li><span class="font-bold">school forum:</span> diễn đàn trường</li>
+                        <li><span class="font-bold">peer pressure:</span> áp lực bạn bè</li>
+                        <li><span class="font-bold">school counsellor:</span> tư vấn viên học đường</li>
+                        <li><span class="font-bold">realistic timetable:</span> thời gian biểu thực tế</li>
+                    </ul>
+                    <p class="font-bold text-gray-700 mb-1">• Grammar:</p>
+                    <p class="text-xs text-gray-600">
+                        - Compound sentences: nối bằng fanboys (and, but, or, so, for) hoặc từ nối (however, therefore, otherwise).<br>
+                        - Phụ âm: /ʊə/ (tour, sure) vs /ɔɪ/ (boy, choice).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRACTICE QUESTIONS CONTAINER -->
+        <div id="quiz-container" class="space-y-8">
+            <!-- Questions rendered via JS dynamically -->
+        </div>
+
+        <!-- SUBMIT / RESULT MODAL -->
+        <div id="result-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl text-center transform transition-all border-4 border-purple-300">
+                <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl shadow-inner text-purple-600" id="modal-icon">
+                    🏆
+                </div>
+                <h3 class="text-2xl font-black text-gray-800 mb-1">KẾT QUẢ BÀI LÀM</h3>
+                <p class="text-sm text-gray-500 font-bold mb-4">Giáo viên: Ms Lê Hằng English</p>
+
+                <div class="bg-purple-50 rounded-2xl p-4 mb-6 border border-purple-100">
+                    <div class="text-xs text-purple-600 font-extrabold uppercase tracking-widest mb-1">Số câu đúng</div>
+                    <div class="text-4xl font-black text-purple-800" id="modal-score">0 / 120</div>
+                    <div class="text-sm font-bold text-gray-600 mt-2" id="modal-percentage">Đạt: 0%</div>
+                </div>
+
+                <div class="bg-amber-50 rounded-2xl p-4 mb-6 border border-amber-200 text-left">
+                    <div class="flex items-center gap-2 text-amber-800 font-black mb-1">
+                        <i class="fa-solid fa-comment-dots"></i>
+                        <span>Lời nhắn từ Cô Lê Hằng:</span>
+                    </div>
+                    <p class="text-sm text-amber-900 font-bold leading-relaxed" id="modal-feedback">
+                        --
+                    </p>
+                </div>
+
+                <div class="flex gap-3">
+                    <button onclick="closeModal()" class="btn-3d flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-black py-3 rounded-xl text-sm">
+                        Xem lại bài làm
+                    </button>
+                    <button onclick="location.reload()" class="btn-3d flex-1 bg-purple-600 hover:bg-purple-700 text-white font-black py-3 rounded-xl text-sm shadow-md">
+                        Làm lại bài thi 🔄
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SOUND & LOGIC SCRIPT -->
+    <script>
+        // Web Audio API Sound Effects generator
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        let audioCtx;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new AudioContext();
+            }
+        }
+
+        function playDingSound() {
+            try {
+                initAudio();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+                osc.frequency.exponentialRampToValueAtTime(1046.50, audioCtx.currentTime + 0.3); // C6
+                gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.3);
+            } catch(e) { console.log(e); }
+        }
+
+        function playWrongSound() {
+            try {
+                initAudio();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(200, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(80, audioCtx.currentTime + 0.3);
+                gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.3);
+            } catch(e) { console.log(e); }
+        }
+
+        // Toggle PART A summary panel
+        function toggleSummary() {
+            const content = document.getElementById('summary-content');
+            const chevron = document.getElementById('summary-chevron');
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        /* ALL 120 QUESTIONS DATA WITH FULL UNCUT DETAIL */
+        const rawQuestions = [
+            /* EXERCISE 1: PHONETICS (20 Qs) */
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "1. Choose the word whose underlined part is pronounced differently.",
+                options: ["c<u>oo</u>k", "sch<u>oo</u>l", "w<u>ou</u>ld", "w<u>o</u>man"],
+                correct: 1,
+                exp: `1. Phân tích phát âm nguyên âm gạch chân:
+A. c<u>oo</u>k /kʊk/ (nguyên âm ngắn /ʊ/)
+B. sch<u>oo</u>l /skuːl/ (nguyên âm dài /uː/)
+C. w<u>ou</u>ld /wʊd/ (nguyên âm ngắn /ʊ/)
+D. w<u>o</u>man /ˈwʊm.ən/ (nguyên âm ngắn /ʊ/)
+2. Dịch nghĩa: A. nấu ăn; B. trường học; C. sẽ/muốn; D. người phụ nữ.
+3. Tại sao chọn B? Đáp án B có phần gạch chân phát âm là /uː/, khác với 3 từ còn lại phát âm là /ʊ/.
+4. Tại sao A, C, D sai? Vì cả 3 từ đều phát âm là /ʊ/.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "2. Choose the word whose underlined part is pronounced differently.",
+                options: ["gr<u>ou</u>p", "J<u>u</u>ne", "p<u>u</u>sh", "m<u>o</u>ve"],
+                correct: 2,
+                exp: `1. Phân tích phát âm nguyên âm gạch chân:
+A. gr<u>ou</u>p /ɡruːp/ (/uː/)
+B. J<u>u</u>ne /dʒuːn/ (/uː/)
+C. p<u>u</u>sh /pʊʃ/ (/ʊ/)
+D. m<u>o</u>ve /muːv/ (/uː/)
+2. Dịch nghĩa: A. nhóm; B. tháng 6; C. đẩy; D. di chuyển.
+3. Tại sao chọn C? Đáp án C có âm /ʊ/, các từ còn lại phát âm /uː/.
+4. Tại sao A, B, D sai? Vì đều phát âm là /uː/.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "3. Choose the word whose underlined part is pronounced differently.",
+                options: ["f<u>u</u>ll", "p<u>u</u>t", "p<u>u</u>ll", "bl<u>u</u>e"],
+                correct: 3,
+                exp: `1. Phân tích phát âm:
+A. f<u>u</u>ll /fʊl/ (/ʊ/)
+B. p<u>u</u>t /pʊt/ (/ʊ/)
+C. p<u>u</u>ll /pʊl/ (/ʊ/)
+D. bl<u>u</u>e /bluː/ (/uː/)
+2. Dịch nghĩa: A. đầy; B. đặt/để; C. kéo; D. màu xanh da trời.
+3. Tại sao chọn D? Đáp án D có nguyên âm dài /uː/, còn lại là /ʊ/.
+4. Tại sao A, B, C sai? Vì đều có nguyên âm /ʊ/.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "4. Choose the word whose underlined part is pronounced differently.",
+                options: ["p<u>i</u>ck", "v<u>i</u>llage", "b<u>u</u>sy", "r<u>i</u>ce"],
+                correct: 3,
+                exp: `1. Phân tích phát âm:
+A. p<u>i</u>ck /pɪk/ (/ɪ/)
+B. v<u>i</u>llage /ˈvɪl.ɪdʒ/ (/ɪ/)
+C. b<u>u</u>sy /ˈbɪz.i/ (/ɪ/)
+D. r<u>i</u>ce /raɪs/ (/aɪ/)
+2. Dịch nghĩa: A. hái/chọn; B. ngôi làng; C. bận rộn; D. gạo/cơm.
+3. Tại sao chọn D? Đáp án D chứa nguyên âm đôi /aɪ/, trong khi 3 từ còn lại phát âm là /ɪ/.
+4. Tại sao A, B, C sai? Đều phát âm phần gạch chân là /ɪ/.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "5. Choose the word whose underlined part is pronounced differently.",
+                options: ["vill<u>a</u>ge", "work<u>e</u>r", "teach<u>e</u>r", "farm<u>e</u>r"],
+                correct: 0,
+                exp: `1. Phân tích phát âm âm tiết cuối:
+A. vill<u>a</u>ge /ˈvɪl.ɪdʒ/ (phần đuôi phát âm /ɪdʒ/)
+B. work<u>e</u>r /ˈwɜː.kər/ (/ər/)
+C. teach<u>e</u>r /ˈtiː.tʃər/ (/ər/)
+D. farm<u>e</u>r /ˈfɑː.mər/ (/ər/)
+2. Dịch nghĩa: A. ngôi làng; B. công nhân; C. giáo viên; D. nông dân.
+3. Tại sao chọn A? Phần gạch chân chứa âm /ɪ/, các từ khác là âm /ə/.
+4. Tại sao B, C, D sai? Vì đều kết thúc bằng âm /ər/ (/ə/).`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "6. Choose the word whose underlined part is pronounced differently.",
+                options: ["hosp<u>i</u>table", "v<u>i</u>llage", "p<u>i</u>ck", "r<u>i</u>ce"],
+                correct: 3,
+                exp: `1. Phân tích phát âm:
+A. hosp<u>i</u>table /hɒsˈpɪt.ə.bəl/ (/ɪ/)
+B. v<u>i</u>llage /ˈvɪl.ɪdʒ/ (/ɪ/)
+C. p<u>i</u>ck /pɪk/ (/ɪ/)
+D. r<u>i</u>ce /raɪs/ (/aɪ/)
+2. Dịch nghĩa: A. hiếu khách; B. ngôi làng; C. hái/chọn; D. gạo/cơm.
+3. Tại sao chọn D? Đáp án D mang âm /aɪ/, 3 từ còn lại chứa âm /ɪ/.
+4. Tại sao A, B, C sai? Vì phần gạch chân đều phát âm là /ɪ/.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "7. Choose the word whose underlined part is pronounced differently.",
+                options: ["t<u>ou</u>r", "s<u>u</u>re", "ens<u>u</u>re", "b<u>oy</u>"],
+                correct: 3,
+                exp: `1. Phân tích phát âm nguyên âm:
+A. t<u>ou</u>r /tʊər/ (/ʊə/)
+B. s<u>u</u>re /ʃʊər/ (/ʊə/)
+C. ens<u>u</u>re /ɪnˈʃʊər/ (/ʊə/)
+D. b<u>oy</u> /bɔɪ/ (/ɔɪ/)
+2. Dịch nghĩa: A. chuyến du lịch; B. chắc chắn; C. đảm bảo; D. cậu bé.
+3. Tại sao chọn D? Đáp án D chứa nguyên âm đôi /ɔɪ/, còn A, B, C chứa nguyên âm đôi /ʊə/.
+4. Tại sao A, B, C sai? Đều phát âm là /ʊə/.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "8. Choose the word whose underlined part is pronounced differently.",
+                options: ["t<u>oy</u>", "t<u>ou</u>rist", "av<u>oi</u>d", "enj<u>oy</u>"],
+                correct: 1,
+                exp: `1. Phân tích phát âm:
+A. t<u>oy</u> /tɔɪ/ (/ɔɪ/)
+B. t<u>ou</u>rist /ˈtʊə.rɪst/ (/ʊə/)
+C. av<u>oi</u>d /əˈvɔɪd/ (/ɔɪ/)
+D. enj<u>oy</u> /ɪnˈdʒɔɪ/ (/ɔɪ/)
+2. Dịch nghĩa: A. đồ chơi; B. khách du lịch; C. tránh; D. thích/thưởng thức.
+3. Tại sao chọn B? B chứa nguyên âm /ʊə/, trong khi A, C, D đều chứa nguyên âm /ɔɪ/.
+4. Tại sao A, C, D sai? Vì phần gạch chân đọc là /ɔɪ/.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "9. Choose the word whose underlined part is pronounced differently.",
+                options: ["s<u>u</u>re", "ch<u>oi</u>ce", "ens<u>u</u>re", "t<u>ou</u>rist"],
+                correct: 1,
+                exp: `1. Phân tích phát âm:
+A. s<u>u</u>re /ʃʊər/ (/ʊə/)
+B. ch<u>oi</u>ce /tʃɔɪs/ (/ɔɪ/)
+C. ens<u>u</u>re /ɪnˈʃʊər/ (/ʊə/)
+D. t<u>ou</u>rist /ˈtʊə.rɪst/ (/ʊə/)
+2. Dịch nghĩa: A. chắc chắn; B. sự lựa chọn; C. đảm bảo; D. du khách.
+3. Tại sao chọn B? B phát âm là /ɔɪ/, 3 phương án còn lại là /ʊə/.
+4. Tại sao A, C, D sai? Đều phát âm là /ʊə/.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "10. Choose the word whose underlined part is pronounced differently.",
+                options: ["b<u>oy</u>", "n<u>oi</u>sy", "p<u>oi</u>nt", "t<u>ou</u>rist"],
+                correct: 3,
+                exp: `1. Phân tích phát âm:
+A. b<u>oy</u> /bɔɪ/ (/ɔɪ/)
+B. n<u>oi</u>sy /ˈnɔɪ.zi/ (/ɔɪ/)
+C. p<u>oi</u>nt /pɔɪnt/ (/ɔɪ/)
+D. t<u>ou</u>rist /ˈtʊə.rɪst/ (/ʊə/)
+2. Dịch nghĩa: A. cậu bé; B. ồn ào; C. điểm/chỉ; D. khách du lịch.
+3. Tại sao chọn D? D chứa âm /ʊə/, còn A, B, C chứa âm /ɔɪ/.
+4. Tại sao A, B, C sai? Đều phát âm phần gạch chân là /ɔɪ/.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "11. Choose the word whose stress pattern is different from the others.",
+                options: ["leisure", "puzzle", "message", "prefer"],
+                correct: 3,
+                exp: `1. Phân tích trọng âm:
+A. leisure /ˈleʒ.ər/ (trọng âm âm tiết 1)
+B. puzzle /ˈpʌz.əl/ (trọng âm âm tiết 1)
+C. message /ˈmes.ɪdʒ/ (trọng âm âm tiết 1)
+D. prefer /prɪˈfɜːr/ (trọng âm âm tiết 2)
+2. Dịch nghĩa: A. thời gian rảnh; B. câu đố; C. tin nhắn; D. thích hơn.
+3. Tại sao chọn D? D có trọng âm rơi vào âm tiết thứ 2, các từ còn lại rơi vào âm tiết thứ 1.
+4. Tại sao A, B, C sai? Đều có trọng âm ở âm tiết 1.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "12. Choose the word whose stress pattern is different from the others.",
+                options: ["cooking", "knitting", "activity", "cycling"],
+                correct: 2,
+                exp: `1. Phân tích trọng âm:
+A. cooking /ˈkʊk.ɪŋ/ (trọng âm 1)
+B. knitting /ˈnɪt.ɪŋ/ (trọng âm 1)
+C. activity /ækˈtɪv.ə.ti/ (trọng âm 2)
+D. cycling /ˈsaɪ.klɪŋ/ (trọng âm 1)
+2. Dịch nghĩa: A. nấu ăn; B. đan len; C. hoạt động; D. đi xe đạp.
+3. Tại sao chọn C? C có trọng âm âm tiết 2, các từ còn lại rơi vào âm tiết 1.
+4. Tại sao A, B, D sai? Vì trọng âm ở âm tiết thứ nhất.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "13. Choose the word whose stress pattern is different from the others.",
+                options: ["paddy", "cattle", "harvest", "unload"],
+                correct: 3,
+                exp: `1. Phân tích trọng âm:
+A. paddy /ˈpæd.i/ (trọng âm 1)
+B. cattle /ˈkæt.əl/ (trọng âm 1)
+C. harvest /ˈhɑː.vɪst/ (trọng âm 1)
+D. unload /ʌnˈləʊd/ (trọng âm 2)
+2. Dịch nghĩa: A. lúa/đồng lúa; B. gia súc; C. thu hoạch; D. dỡ hàng/lúa.
+3. Tại sao chọn D? D nhấn âm 2, các từ A, B, C nhấn âm 1.
+4. Tại sao A, B, C sai? Trọng âm rơi vào âm tiết đầu tiên.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "14. Choose the word whose stress pattern is different from the others.",
+                options: ["picturesque", "community", "traditional", "delicious"],
+                correct: 0,
+                exp: `1. Phân tích trọng âm:
+A. picturesque /ˌpɪk.tʃərˈesk/ (trọng âm rơi vào âm tiết 3)
+B. community /kəˈmjuː.nə.ti/ (trọng âm rơi vào âm tiết 2)
+C. traditional /trəˈdɪʃ.ən.əl/ (trọng âm rơi vào âm tiết 2)
+D. delicious /dɪˈlɪʃ.əs/ (trọng âm rơi vào âm tiết 2)
+2. Dịch nghĩa: A. đẹp như tranh; B. cộng đồng; C. truyền thống; D. ngon miệng.
+3. Tại sao chọn A? A nhấn âm 3, còn B, C, D đều nhấn âm 2.
+4. Tại sao B, C, D sai? Đều nhấn âm 2.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "15. Choose the word whose stress pattern is different from the others.",
+                options: ["village", "cottage", "collect", "poultry"],
+                correct: 2,
+                exp: `1. Phân tích trọng âm:
+A. village /ˈvɪl.ɪdʒ/ (trọng âm 1)
+B. cottage /ˈkɒt.ɪdʒ/ (trọng âm 1)
+C. collect /kəˈlekt/ (trọng âm 2)
+D. poultry /ˈpəʊl.tri/ (trọng âm 1)
+2. Dịch nghĩa: A. ngôi làng; B. nhà tranh/nhỏ; C. thu gom/sưu tầm; D. gia cầm.
+3. Tại sao chọn C? C có trọng âm ở âm tiết 2, các đáp án khác nhấn âm 1.
+4. Tại sao A, B, D sai? Đều nhấn ở âm tiết 1.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "16. Choose the word whose stress pattern is different from the others.",
+                options: ["pressure", "forum", "advice", "bully"],
+                correct: 2,
+                exp: `1. Phân tích trọng âm:
+A. pressure /ˈpreʃ.ər/ (trọng âm 1)
+B. forum /ˈfɔː.rəm/ (trọng âm 1)
+C. advice /ədˈvaɪs/ (trọng âm 2)
+D. bully /ˈbʊl.i/ (trọng âm 1)
+2. Dịch nghĩa: A. áp lực; B. diễn đàn; C. lời khuyên; D. kẻ bắt nạt.
+3. Tại sao chọn C? C nhấn âm tiết thứ 2 (danh từ không đếm được ngoại lệ hoặc động từ gốc), còn A, B, D nhấn âm tiết thứ 1.
+4. Tại sao A, B, D sai? Vì trọng âm ở âm 1.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "17. Choose the word whose stress pattern is different from the others.",
+                options: ["account", "connect", "discuss", "website"],
+                correct: 3,
+                exp: `1. Phân tích trọng âm:
+A. account /əˈkaʊnt/ (trọng âm 2)
+B. connect /kəˈnekt/ (trọng âm 2)
+C. discuss /dɪˈskʌs/ (trọng âm 2)
+D. website /ˈweb.saɪt/ (trọng âm 1)
+2. Dịch nghĩa: A. tài khoản; B. kết nối; C. thảo luận; D. trang web.
+3. Tại sao chọn D? D là danh từ ghép có trọng âm ở âm tiết 1, còn A, B, C đều nhấn âm tiết 2.
+4. Tại sao A, B, C sai? Đều nhấn trọng âm ở âm 2.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "18. Choose the word whose stress pattern is different from the others.",
+                options: ["teenager", "counsellor", "notification", "festival"],
+                correct: 2,
+                exp: `1. Phân tích trọng âm:
+A. teenager /ˈtiːnˌeɪ.dʒər/ (trọng âm 1)
+B. counsellor /ˈkaʊn.səl.ər/ (trọng âm 1)
+C. notification /ˌnəʊ.tɪ.fɪˈkeɪ.ʃən/ (trọng âm chính ở âm 4: -tion)
+D. festival /ˈfes.tɪ.vəl/ (trọng âm 1)
+2. Dịch nghĩa: A. thanh thiếu niên; B. tư vấn viên; C. thông báo; D. lễ hội.
+3. Tại sao chọn C? C có trọng âm chính rơi vào âm tiết thứ 4 (-keɪ-), trong khi A, B, D đều có trọng âm chính ở âm tiết thứ 1.
+4. Tại sao A, B, D sai? Vì trọng âm chính ở âm 1.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "19. Choose the word whose stress pattern is different from the others.",
+                options: ["social", "useful", "complete", "private"],
+                correct: 2,
+                exp: `1. Phân tích trọng âm:
+A. social /ˈsəʊ.ʃəl/ (trọng âm 1)
+B. useful /ˈjuːs.fəl/ (trọng âm 1)
+C. complete /kəmˈpliːt/ (trọng âm 2)
+D. private /ˈpraɪ.vət/ (trọng âm 1)
+2. Dịch nghĩa: A. thuộc xã hội; B. hữu ích; C. hoàn thành; D. riêng tư.
+3. Tại sao chọn C? C là tính từ/động từ nhấn âm 2, các từ A, B, D là tính từ nhấn âm 1.
+4. Tại sao A, B, D sai? Vì trọng âm ở âm tiết thứ nhất.`
+            },
+            {
+                exercise: "EXERCISE 1. PHONETICS – Pronunciation & Stress",
+                type: "single",
+                q: "20. Choose the word whose stress pattern is different from the others.",
+                options: ["competition", "expectation", "information", "community"],
+                correct: 3,
+                exp: `1. Phân tích trọng âm:
+A. competition /ˌkɒm.pəˈtɪʃ.ən/ (trọng âm 3)
+B. expectation /ˌek.spekˈteɪ.ʃən/ (trọng âm 3)
+C. information /ˌɪn.fəˈmeɪ.ʃən/ (trọng âm 3)
+D. community /kəˈmjuː.nə.ti/ (trọng âm 2)
+2. Dịch nghĩa: A. cuộc thi; B. sự kỳ vọng; C. thông tin; D. cộng đồng.
+3. Tại sao chọn D? D nhấn âm tiết 2, còn A, B, C kết thúc đuôi -tion nên trọng âm nhấn trước đuôi này (âm tiết thứ 3).
+4. Tại sao A, B, C sai? Đều nhấn ở âm tiết thứ 3.`
+            },
+
+            /* EXERCISE 2: VOCABULARY & GRAMMAR (40 Qs) */
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "1. My sister is keen on ________ paper flowers in her free time.",
+                options: ["make", "making", "to making", "made"],
+                correct: 1,
+                exp: `1. Dịch câu: "Chị gái tôi rất thích làm hoa giấy vào thời gian rảnh rỗi."
+2. Phân tích từ vựng 4 đáp án: A. make (V-nguyên thể); B. making (V-ing); C. to making (Sai ngữ pháp); D. made (V-quá khứ).
+3. Tại sao chọn B? Cấu trúc: "be keen on + V-ing" (thích/đam mê làm gì). Do đó sau giới từ 'on' chọn danh động từ "making".
+4. Tại sao A, C, D sai? A sai vì sau giới từ không dùng V-nguyên thể; C thừa 'to'; D sai thì/dạng.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "2. Tom detests ________ up late at weekends.",
+                options: ["getting", "get", "to got", "gets"],
+                correct: 0,
+                exp: `1. Dịch câu: "Tom rất ghét thức dậy muộn vào cuối tuần."
+2. Phân tích từ vựng đáp án: A. getting (V-ing); B. get (V-nguyên thể); C. to got (Sai); D. gets (V-chia số ít).
+3. Tại sao chọn A? Cấu trúc: "detest + V-ing" (ghét làm gì).
+4. Tại sao B, C, D sai? Vì không đúng cấu trúc đi kèm sau động từ 'detest'.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "3. Would you like ________ to the cinema with us tonight?",
+                options: ["go", "going", "to go", "went"],
+                correct: 2,
+                exp: `1. Dịch câu: "Bạn có muốn đi xem phim với chúng tôi tối nay không?"
+2. Phân tích đáp án: A. go; B. going; C. to go; D. went.
+3. Tại sao chọn C? Cấu trúc mời lịch sự: "Would you like + to V-inf...?"
+4. Tại sao A, B, D sai? Vì sau "Would like" dùng động từ nguyên thể có 'to' (to V), chọn B hay A là sai ngữ pháp.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "4. I prefer cycling ________ playing computer games.",
+                options: ["than", "from", "to", "with"],
+                correct: 2,
+                exp: `1. Dịch câu: "Tôi thích đi xe đạp hơn là chơi trò chơi máy tính."
+2. Phân tích đáp án: A. than; B. from; C. to; D. with.
+3. Tại sao chọn C? Cấu trúc so sánh thích hơn: "prefer V-ing A TO V-ing B" (thích làm việc A hơn việc B).
+4. Tại sao A, B, D sai? 'Prefer' đi với giới từ 'to', không đi với 'than', 'from' hay 'with'.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "5. Mai enjoys ________ her friends after school.",
+                options: ["messaging", "message", "to message", "messaged"],
+                correct: 0,
+                exp: `1. Dịch câu: "Mai thích nhắn tin cho bạn bè sau giờ học."
+2. Phân tích đáp án: A. messaging (V-ing); B. message; C. to message; D. messaged.
+3. Tại sao chọn A? Cấu trúc: "enjoy + V-ing" (thích làm gì).
+4. Tại sao B, C, D sai? Vì không dùng to-V hay V-nguyên thể sau 'enjoy'.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "6. The farmers are working in a large ________ near the river.",
+                options: ["forum", "paddy field", "website", "club"],
+                correct: 1,
+                exp: `1. Phân tích từ vựng 4 đáp án:
+A. forum (n): diễn đàn.
+B. paddy field (n): cánh đồng lúa/ruộng lúa.
+C. website (n): trang web.
+D. club (n): câu lạc bộ.
+2. Dịch câu: "Các nông dân đang làm việc trên một cánh đồng lúa lớn gần sông."
+3. Tại sao chọn B? Nông dân (farmers) làm việc ở cánh đồng lúa (paddy field) là hợp ngữ cảnh nhất.
+4. Tại sao A, C, D sai? Sai ngữ cảnh thực tế công việc của nông dân.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "7. A large ________ of cattle was moving slowly along the road.",
+                options: ["herd", "crop", "poultry", "harvest"],
+                correct: 0,
+                exp: `1. Phân tích từ vựng 4 đáp án:
+A. herd (n): đàn (gia súc như bò, trâu).
+B. crop (n): vụ mùa.
+C. poultry (n): gia cầm.
+D. harvest (n): việc thu hoạch.
+2. Dịch câu: "Một đàn gia súc lớn đang di chuyển chậm rãi dọc theo con đường."
+3. Tại sao chọn A? Collocation: "a herd of cattle" có nghĩa là một đàn gia súc.
+4. Tại sao B, C, D sai? Không đi với cụm "of cattle" để chỉ đàn.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "8. Life in the village usually moves ________ than life in the city.",
+                options: ["slow", "more slowly", "slowest", "more slow"],
+                correct: 1,
+                exp: `1. Phân tích từ vựng: move (v) cần trạng từ bổ nghĩa. Trạng từ của slow là slowly.
+2. Dịch câu: "Cuộc sống ở làng quê thường trôi qua chậm hơn cuộc sống ở thành phố."
+3. Tại sao chọn B? So sánh hơn của trạng từ dài 'slowly' là "more slowly + than".
+4. Tại sao A, C, D sai? A dùng tính từ; C là so sánh nhất; D dùng sai dạng tính từ dài/trạng từ.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "9. After practising every day, Hoa can milk the cows ________ than before.",
+                options: ["good", "best", "better", "more well"],
+                correct: 2,
+                exp: `1. Dịch câu: "Sau khi luyện tập mỗi ngày, Hoa có thể vắt sữa bò tốt hơn trước."
+2. Phân tích đáp án: A. good (adj); B. best (so sánh nhất); C. better (so sánh hơn của well/good); D. more well (sai).
+3. Tại sao chọn C? Động từ 'milk' cần trạng từ 'well', dạng so sánh hơn bất quy tắc của 'well' là 'better'.
+4. Tại sao A, B, D sai? A là tính từ nguyên thể; B là so sánh nhất; D không tồn tại dạng 'more well'.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "10. The guide asked us to walk ________ near the combine harvester.",
+                options: ["careful", "more careful", "carefully", "care"],
+                correct: 2,
+                exp: `1. Phân tích đáp án: A. careful (adj); B. more careful; C. carefully (adv); D. care (n/v).
+2. Dịch câu: "Người hướng dẫn yêu cầu chúng tôi đi lại một cách cẩn thận gần máy gặt đập liên hợp."
+3. Tại sao chọn C? Động từ thường 'walk' đòi hỏi một trạng từ (carefully) đứng sau để bổ nghĩa.
+4. Tại sao A, B, D sai? A, B là tính từ; D là danh từ/động từ.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "11. Students use the school ________ to discuss club activities online.",
+                options: ["pressure", "forum", "bully", "expectation"],
+                correct: 1,
+                exp: `1. Phân tích từ vựng:
+A. pressure (n): áp lực.
+B. forum (n): diễn đàn.
+C. bully (n): kẻ bắt nạt.
+D. expectation (n): sự kỳ vọng.
+2. Dịch câu: "Học sinh sử dụng diễn đàn trường để thảo luận về các hoạt động câu lạc bộ trực tuyến."
+3. Tại sao chọn B? "school forum" (diễn đàn trường học) phù hợp nhất với hành động "discuss online".
+4. Tại sao A, C, D sai? Không phù hợp ý nghĩa thảo luận trực tuyến.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "12. You should turn off unnecessary ________ while studying.",
+                options: ["notifications", "crops", "cottages", "puzzles"],
+                correct: 0,
+                exp: `1. Phân tích từ vựng:
+A. notifications (n): thông báo (trên điện thoại/máy tính).
+B. crops (n): vụ mùa.
+C. cottages (n): nhà tranh.
+D. puzzles (n): câu đố.
+2. Dịch câu: "Bạn nên tắt các thông báo không cần thiết trong khi học tập."
+3. Tại sao chọn A? Tắt thông báo (turn off notifications) giúp tập trung học tập.
+4. Tại sao B, C, D sai? Không thể "turn off" vụ mùa hay nhà tranh.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "13. Many teenagers feel a lot of ________ before important examinations.",
+                options: ["leisure", "pressure", "scenery", "livestock"],
+                correct: 1,
+                exp: `1. Phân tích từ vựng:
+A. leisure (n): sự thư thả.
+B. pressure (n): áp lực.
+C. scenery (n): phong cảnh.
+D. livestock (n): vật nuôi.
+2. Dịch câu: "Nhiều thanh thiếu niên cảm thấy rất nhiều áp lực trước các kỳ thi quan trọng."
+3. Tại sao chọn B? Cụm "feel a lot of pressure" (cảm thấy nhiều áp lực) khớp với tâm lý trước kỳ thi.
+4. Tại sao A, C, D sai? Sai ngữ cảnh tình huống kỳ thi.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "14. Minh felt stressed, ________ he made a realistic timetable.",
+                options: ["but", "so", "or", "for"],
+                correct: 1,
+                exp: `1. Phân tích liên từ:
+A. but: nhưng (chỉ sự đối lập).
+B. so: vì vậy / nên (chỉ kết quả).
+C. or: hoặc (chỉ sự lựa chọn).
+D. for: vì (chỉ nguyên nhân).
+2. Dịch câu: "Minh cảm thấy căng thẳng, vì vậy cậu ấy đã lập một thời gian biểu thực tế."
+3. Tại sao chọn B? Hành động lập thời gian biểu là kết quả trực tiếp của việc cảm thấy căng thẳng (chọn 'so').
+4. Tại sao A, C, D sai? Sai quan hệ logic giữa 2 mậnh đề.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "15. The school forum is useful; ________, students should protect their private information.",
+                options: ["therefore", "however", "otherwise", "and"],
+                correct: 1,
+                exp: `1. Phân tích từ nối:
+A. therefore: do đó (kết quả).
+B. however: tuy nhiên (mâu thuẫn/đối lập).
+C. otherwise: nếu không thì.
+D. and: và.
+2. Dịch câu: "Diễn đàn trường học rất hữu ích; tuy nhiên, học sinh nên bảo vệ thông tin riêng tư của mình."
+3. Tại sao chọn B? Vế sau đưa ra lời cảnh báo mang tính đối lập/lưu ý so với sự hữu ích ở vế trước -> chọn 'however'.
+4. Tại sao A, C, D sai? Không thể hiện đúng ý nghĩa đối lập.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "16. Ask a trusted adult for help; ________, the problem may get worse.",
+                options: ["otherwise", "however", "and", "so"],
+                correct: 0,
+                exp: `1. Phân tích trạng từ liên kết:
+A. otherwise: nếu không thì (chỉ hậu quả xấu nếu không làm theo vế trước).
+B. however: tuy nhiên.
+C. and: và.
+D. so: vì vậy.
+2. Dịch câu: "Hãy nhờ một người lớn tin cậy giúp đỡ; nếu không thì vấn đề có thể trở nên tồi tệ hơn."
+3. Tại sao chọn A? Vế sau nói về hậu quả nếu không hỏi người lớn -> chọn 'otherwise'.
+4. Tại sao B, C, D sai? Sai mối quan hệ giả định hậu quả.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "17. Lan speaks more quietly ________ her younger brother.",
+                options: ["as", "than", "from", "with"],
+                correct: 1,
+                exp: `1. Dịch câu: "Lan nói chuyện nhỏ nhẹ hơn em trai của cô ấy."
+2. Phân tích cấu trúc: "more + adv + THAN..." (So sánh hơn với trạng từ dài).
+3. Tại sao chọn B? Từ đi kèm trong cấu trúc so sánh hơn bắt buộc là 'than'.
+4. Tại sao A, C, D sai? 'as' dùng trong so sánh bằng, 'from' và 'with' không dùng trong so sánh hơn.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "18. The local people are friendly and ________.",
+                options: ["hospitable", "private", "online", "stressful"],
+                correct: 0,
+                exp: `1. Phân tích từ vựng:
+A. hospitable (adj): hiếu khách.
+B. private (adj): riêng tư.
+C. online (adj): trực tuyến.
+D. stressful (adj): gây căng thẳng.
+2. Dịch câu: "Người dân địa phương rất thân thiện và hiếu khách."
+3. Tại sao chọn A? 'Friendly and hospitable' là cặp tính từ song song khen tính cách con người.
+4. Tại sao B, C, D sai? Không hợp nghĩa mô tả tính cách thân thiện của người dân.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "19. She is interested in ________ the arts and crafts club.",
+                options: ["join", "joined", "joining", "to joining"],
+                correct: 2,
+                exp: `1. Dịch câu: "Cô ấy quan tâm đến việc tham gia câu lạc bộ thủ công mỹ thuật."
+2. Phân tích cấu trúc: "be interested in + V-ing" (thích/quan tâm đến việc gì).
+3. Tại sao chọn C? Sau giới từ 'in' bắt buộc dùng danh động từ (joining).
+4. Tại sao A, B, D sai? Sai cấu trúc đi kèm sau giới từ.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "20. Could you ________ me how to log on to the school forum?",
+                options: ["show", "showing", "to show", "showed"],
+                correct: 0,
+                exp: `1. Dịch câu: "Bạn có thể chỉ cho tôi cách đăng nhập vào diễn đàn trường không?"
+2. Phân tích cấu trúc: "Could you + V-inf...?" (Lời yêu cầu lịch sự).
+3. Tại sao chọn A? Sau động từ khuyết thiếu 'Could', động từ ở dạng nguyên thể không 'to' (show).
+4. Tại sao B, C, D sai? Vì không dùng V-ing, to-V hay V-ed sau 'Could'.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "21. My cousin is crazy ________ building model houses.",
+                options: ["of", "about", "with", "for"],
+                correct: 1,
+                exp: `1. Dịch câu: "Anh họ tôi rất mê làm mô hình nhà thu nhỏ."
+2. Cấu trúc cố định: "be crazy ABOUT + V-ing/N" (rất mê/cuồng cái gì).
+3. Tại sao chọn B? Đi với tính từ 'crazy' là giới từ 'about'.
+4. Tại sao A, C, D sai? Không khớp giới từ chuẩn đi với 'crazy'.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "22. Do you fancy ________ a film at the new cinema this evening?",
+                options: ["watch", "watched", "watching", "to watching"],
+                correct: 2,
+                exp: `1. Dịch câu: "Bạn có muốn xem một bộ phim ở rạp chiếu phim mới tối nay không?"
+2. Cấu trúc hỏi ý thích/mời rủ: "Do you fancy + V-ing...?"
+3. Tại sao chọn C? Động từ 'fancy' đòi hỏi danh động từ V-ing (watching) theo sau.
+4. Tại sao A, B, D sai? Sai cấu trúc động từ theo sau 'fancy'.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "23. I enjoy ________ in the morning because the roads are quiet.",
+                options: ["cycle", "cycling", "cycled", "to cycle"],
+                correct: 1,
+                exp: `1. Dịch câu: "Tôi thích đi xe đạp vào buổi sáng vì đường xá rất yên tĩnh."
+2. Cấu trúc: "enjoy + V-ing" (thích làm gì).
+3. Tại sao chọn B? Chọn 'cycling' vì 'enjoy' đi với V-ing.
+4. Tại sao A, C, D sai? Không dùng động từ nguyên thể hay quá khứ sau 'enjoy'.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "24. She prefers reading books ________ messaging friends late at night.",
+                options: ["to", "than", "with", "from"],
+                correct: 0,
+                exp: `1. Dịch câu: "Cô ấy thích đọc sách hơn là nhắn tin cho bạn bè lúc đêm muộn."
+2. Cấu trúc so sánh thích hơn: "prefer V-ing1 TO V-ing2".
+3. Tại sao chọn A? Giới từ nối hai hành động trong cấu trúc 'prefer' bắt buộc là 'to'.
+4. Tại sao B, C, D sai? Bẫy thường gặp là chọn 'than' (sai, 'than' chỉ dùng cho 'would rather').`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "25. The children watched the farmers ________ rice with a combine harvester.",
+                options: ["harvested", "to harvest", "harvest", "to harvesting"],
+                correct: 2,
+                exp: `1. Dịch câu: "Bọn trẻ đã quan sát các bác nông dân gặt lúa bằng máy gặt đập liên hợp."
+2. Cấu trúc giác quan: "watch + O + V-inf" (chứng kiến toàn bộ hành động diễn ra).
+3. Tại sao chọn C? Động từ 'harvest' ở dạng nguyên thể không 'to'.
+4. Tại sao A, B, D sai? Sau 'watch' không dùng to-V hay V-ed.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "26. The workers ________ the bags of rice from the truck before it started raining.",
+                options: ["unloaded", "raised", "connected", "browsed"],
+                correct: 0,
+                exp: `1. Phân tích từ vựng:
+A. unloaded (v): dỡ (hàng/lúa) xuống.
+B. raised (v): nuôi/nâng lên.
+C. connected (v): kết nối.
+D. browsed (v): lướt (mạng/trang web).
+2. Dịch câu: "Các công nhân đã dỡ các bao tải lúa xuống khỏi xe tải trước khi trời bắt đầu mưa."
+3. Tại sao chọn A? 'Unload bags of rice' (dỡ bao lúa) đúng ngữ cảnh bốc dỡ hàng khỏi xe tải.
+4. Tại sao B, C, D sai? Sai hoàn toàn ngữ cảnh hành động.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "27. A horse usually runs ________ than a buffalo.",
+                options: ["fast", "fastest", "more fast", "faster"],
+                correct: 3,
+                exp: `1. Phân tích từ 'fast': vừa là tính từ vừa là trạng từ ngắn.
+2. Dịch câu: "Một con ngựa thường chạy nhanh hơn một con trâu."
+3. Tại sao chọn D? So sánh hơn của trạng từ ngắn 'fast' là 'faster' (+ than).
+4. Tại sao A, B, C sai? A là dạng nguyên thể; B là so sánh nhất; C sai quy tắc (không dùng 'more fast').`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "28. The farmers completed the work ________ than they had expected.",
+                options: ["early", "earlier", "more early", "earliest"],
+                correct: 1,
+                exp: `1. Phân tích từ 'early': kết thúc bằng -y, dạng trạng từ so sánh hơn là 'earlier'.
+2. Dịch câu: "Các nông dân đã hoàn thành công việc sớm hơn so với dự kiến của họ."
+3. Tại sao chọn B? 'Earlier' là dạng so sánh hơn chuẩn xác của 'early'.
+4. Tại sao A, C, D sai? A là dạng gốc; C sai ngữ pháp; D là so sánh nhất.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "29. This year, the villagers are operating the machines ________ than last year.",
+                options: ["more efficiently", "efficient", "most efficiently", "efficiency"],
+                correct: 0,
+                exp: `1. Phân tích: 'efficiently' là trạng từ dài bổ nghĩa cho động từ 'operate'.
+2. Dịch câu: "Năm nay, người dân trong làng đang vận hành máy móc hiệu quả hơn năm ngoái."
+3. Tại sao chọn A? Cấu trúc so sánh hơn với trạng từ dài: "more + adv + than" -> "more efficiently".
+4. Tại sao B, C, D sai? B là tính từ; C là so sánh nhất; D là danh từ.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "30. The valley is not as ________ as the coastal plain.",
+                options: ["vast", "vastly", "vaster", "more vastly"],
+                correct: 0,
+                exp: `1. Phân tích cấu trúc: "not as + adj + as" (So sánh không bằng). Sau 'is' dùng tính từ.
+2. Dịch câu: "Thung lũng không rộng lớn bằng vùng đồng bằng duyên hải."
+3. Tại sao chọn A? Giữa cấu trúc 'as...as' phải là tính từ nguyên mẫu (vast).
+4. Tại sao B, C, D sai? B là trạng từ; C là dạng so sánh hơn; D sai cấu trúc.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "31. The club leader asked students not to share ________ information on the forum.",
+                options: ["public", "private", "traditional", "picturesque"],
+                correct: 1,
+                exp: `1. Phân tích từ vựng:
+A. public (adj): công cộng/công khai.
+B. private (adj): riêng tư/cá nhân.
+C. traditional (adj): truyền thống.
+D. picturesque (adj): đẹp như tranh.
+2. Dịch câu: "Trưởng câu lạc bộ yêu cầu học sinh không chia sẻ thông tin riêng tư trên diễn đàn."
+3. Tại sao chọn B? "private information" (thông tin riêng tư) là cụm từ cảnh báo an toàn mạng.
+4. Tại sao A, C, D sai? Sai ngữ cảnh quy định an toàn thông tin.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "32. Lan could not ________ because messages kept appearing on her screen.",
+                options: ["harvest", "concentrate", "weave", "overlook"],
+                correct: 1,
+                exp: `1. Phân tích từ vựng:
+A. harvest (v): thu hoạch.
+B. concentrate (v): tập trung.
+C. weave (v): dệt.
+D. overlook (v): nhìn ra/bỏ qua.
+2. Dịch câu: "Lan không thể tập trung vì các tin nhắn liên tục xuất hiện trên màn hình của cô ấy."
+3. Tại sao chọn B? Tin nhắn liên tục hiện ra gây mất tập trung (concentrate).
+4. Tại sao A, C, D sai? Không liên quan đến việc bị làm phiền bởi tin nhắn.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "33. The school counsellor advised Nam to divide large tasks ________ smaller steps.",
+                options: ["at", "on", "into", "from"],
+                correct: 2,
+                exp: `1. Cụm động từ cố định: "divide something INTO something" (chia nhỏ cái gì thành cái gì).
+2. Dịch câu: "Tư vấn viên học đường đã khuyên Nam chia các nhiệm vụ lớn thành các bước nhỏ hơn."
+3. Tại sao chọn C? Giới từ đi với 'divide' trong ngữ cảnh chia nhỏ là 'into'.
+4. Tại sao A, B, D sai? Không đúng cấu trúc động từ đi kèm.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "34. Mai joined the sports club, ________ she still had enough time for her homework.",
+                options: ["but", "or", "otherwise", "for"],
+                correct: 0,
+                exp: `1. Phân tích liên từ:
+A. but: nhưng (đối lập).
+B. or: hoặc.
+C. otherwise: nếu không thì.
+D. for: vì.
+2. Dịch câu: "Mai đã tham gia câu lạc bộ thể thao, nhưng cô ấy vẫn có đủ thời gian làm bài tập về nhà."
+3. Tại sao chọn A? Thể hiện sự đối lập tích cực (dù tham gia CLB nhưng vẫn đủ thời gian làm bài).
+4. Tại sao B, C, D sai? Không thể hiện được mối quan hệ đối lập phù hợp.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "35. The website was easy to use; ________, several students needed help creating accounts.",
+                options: ["therefore", "however", "so", "and"],
+                correct: 1,
+                exp: `1. Phân tích trạng từ liên kết đứng sau dấu chấm phẩy (;):
+A. therefore: do đó.
+B. however: tuy nhiên.
+C. so: vì vậy.
+D. and: và.
+2. Dịch câu: "Trang web rất dễ sử dụng; tuy nhiên, một vài học sinh vẫn cần trợ giúp để tạo tài khoản."
+3. Tại sao chọn B? Trang web dễ dùng nhưng vẫn có người cần hỗ trợ -> Sự tương phản (however).
+4. Tại sao A, C, D sai? Không thể hiện đúng tính chất tương phản.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "36. Use a strong password, ________ someone may access your account.",
+                options: ["for", "but", "otherwise", "therefore"],
+                correct: 2,
+                exp: `1. Phân tích:
+A. for: vì.
+B. but: nhưng.
+C. otherwise: nếu không thì.
+D. therefore: do đó.
+2. Dịch câu: "Hãy sử dụng một mật khẩu mạnh, nếu không thì ai đó có thể truy cập vào tài khoản của bạn."
+3. Tại sao chọn C? Cảnh báo hậu quả nếu không cài mật khẩu mạnh.
+4. Tại sao A, B, D sai? Sai liên từ diễn đạt hậu quả cảnh báo.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "37. My brother is an active club member, ________ he rarely misses a meeting.",
+                options: ["so", "but", "or", "however"],
+                correct: 0,
+                exp: `1. Phân tích liên từ:
+A. so: nên/vì vậy (chỉ kết quả).
+B. but: nhưng.
+C. or: hoặc.
+D. however: tuy nhiên.
+2. Dịch câu: "Anh trai tôi là một thành viên câu lạc bộ năng nổ, vì vậy anh ấy hiếm khi bỏ lỡ cuộc họp nào."
+3. Tại sao chọn A? Việc hiếm khi bỏ lỡ cuộc họp là kết quả của việc là thành viên năng nổ.
+4. Tại sao B, C, D sai? Sai logic quan hệ nguyên nhân - kết quả.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "38. The teacher stayed after school, ________ several students needed advice.",
+                options: ["for", "otherwise", "however", "or"],
+                correct: 0,
+                exp: `1. Phân tích liên từ đẳng lập:
+A. for: vì (đứng giữa câu giải thích lý do/nguyên nhân cho mệnh đề trước).
+B. otherwise: nếu không thì.
+C. however: tuy nhiên.
+D. or: hoặc.
+2. Dịch câu: "Giáo viên đã ở lại sau giờ học, vì một vài học sinh cần sự tư vấn."
+3. Tại sao chọn A? 'For' ở đây đóng vai trò liên từ chỉ lý do (bằng nghĩa với 'because').
+4. Tại sao B, C, D sai? B, C, D không hợp lý về nghĩa nguyên nhân.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "39. Would you mind ________ the instructions one more time?",
+                options: ["explain", "explaining", "to explain", "explained"],
+                correct: 1,
+                exp: `1. Dịch câu: "Bạn có phiền giải thích lại phần hướng dẫn một lần nữa không?"
+2. Cấu trúc lịch sự: "Would you mind + V-ING...?"
+3. Tại sao chọn B? Sau 'Would you mind' động từ bắt buộc thêm đuôi -ing (explaining).
+4. Tại sao A, C, D sai? Vì không theo đúng mẫu câu 'Would you mind + V-ing'.`
+            },
+            {
+                exercise: "EXERCISE 2. VOCABULARY AND GRAMMAR",
+                type: "single",
+                q: "40. “________ you help me report this problem?” – “Certainly.”",
+                options: ["Did", "Could", "Must", "Should have"],
+                correct: 1,
+                exp: `1. Dịch câu: “Bạn có thể giúp tôi báo cáo vấn đề này không?” – “Tất nhiên rồi.”
+2. Phân tích cấu trúc: "Could you + V-inf...?" dùng để đưa ra lời yêu cầu trợ giúp một cách lịch sự.
+3. Tại sao chọn B? 'Could' phù hợp nhất để đưa ra lời nhờ vả lịch sự và đáp lại là "Certainly".
+4. Tại sao A, C, D sai? 'Did' hỏi quá khứ; 'Must' là bắt buộc; 'Should have' chỉ sự hối tiếc trong quá khứ.`
+            },
+
+            /* EXERCISE 3: FUNCTIONAL COMMUNICATION (20 Qs) */
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "1. Lan: “Would you like to go cycling this Sunday?” - Mai: “________”",
+                options: ["I’d love to. Thanks.", "No, I like.", "It is a bicycle.", "You’re welcome."],
+                correct: 0,
+                exp: `1. Dịch câu hỏi: Lan: "Chủ nhật này bạn có muốn đi đạp xe không?"
+2. Phân tích 4 đáp án:
+A. Mình rất thích. Cảm ơn bạn. (Lời nhận lời mời lịch sự).
+B. Không, mình thích (Sai ngữ pháp/nghĩa).
+C. Nó là một chiếc xe đạp (Không liên quan).
+D. Không có gì (Dùng đáp lại lời cảm ơn).
+3. Tại sao chọn A? Đáp lại lời mời "Would you like to...?", cách nhận lời chuẩn là "I'd love to. Thanks."
+4. Tại sao B, C, D sai? Vì trả lời không đúng quy tắc giao tiếp đáp lại lời mời.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "2. Tom: “Do you fancy going for a walk?” - Mark: “________”",
+                options: ["No, it isn’t.", "I walk yesterday.", "That’s great. Thanks.", "Never mind."],
+                correct: 2,
+                exp: `1. Dịch câu hỏi: Tom: "Bạn có thích đi dạo không?"
+2. Phân tích đáp án:
+A. Không, nó không phải (Sai câu trả lời).
+B. Tôi đã đi dạo hôm qua (Sai thì/không khớp).
+C. Thật tuyệt vời. Cảm ơn nhé. (Đồng ý lời rủ).
+D. Đừng bận tâm (Dùng khi xin lỗi/bỏ qua).
+3. Tại sao chọn C? "That's great. Thanks" là câu nhận lời đi chơi/đi dạo rất tự nhiên.
+4. Tại sao A, B, D sai? Sai ngữ cảnh giao tiếp.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "3. Hoa: “Your photo of the paddy fields is wonderful!” - Nam: “________”",
+                options: ["I don’t think so.", "Thank you. I’m glad you like it.", "That’s all right.", "No, please."],
+                correct: 1,
+                exp: `1. Dịch câu: Hoa: "Bức ảnh chụp ruộng lúa của bạn thật tuyệt vời!"
+2. Phân tích: Hoa đang đưa ra một lời khen (Giving a compliment).
+3. Tại sao chọn B? Đáp lại lời khen chuẩn mực trong tiếng Anh là "Thank you. I'm glad you like it." (Cảm ơn bạn. Mình rất vui vì bạn thích nó).
+4. Tại sao A, C, D sai? A tỏ ra từ chối lịch sự quá đà hoặc phủ nhận; C dùng cho lời xin lỗi/cảm ơn khác; D không phù hợp.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "4. Mai: “What a picturesque village!” - Linh: “________”",
+                options: ["Yes, the scenery is beautiful.", "I am a village.", "You mustn’t.", "It was yesterday."],
+                correct: 0,
+                exp: `1. Dịch câu: Mai: "Thật là một ngôi làng đẹp như tranh vẽ!"
+2. Phân tích: Mai thốt lên khen ngợi cảnh đẹp của ngôi làng.
+3. Tại sao chọn A? Linh đồng tình: "Đúng vậy, phong cảnh ở đây rất đẹp."
+4. Tại sao B, C, D sai? B "Tôi là ngôi làng" (vô lý); C "Bạn không được phép"; D "Nó là ngày hôm qua".`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "5. Nam: “Could you help me upload this photo?” - Lan: “________”",
+                options: ["You should leave.", "It is not a photo.", "I uploaded tomorrow.", "Of course. Let me show you."],
+                correct: 3,
+                exp: `1. Dịch câu: Nam: "Bạn có thể giúp mình tải bức ảnh này lên được không?"
+2. Phân tích: Lời nhờ giúp đỡ "Could you help me...?".
+3. Tại sao chọn D? "Of course. Let me show you." (Tất nhiên rồi. Để mình chỉ cho bạn) thể hiện thái độ sẵn sàng giúp đỡ.
+4. Tại sao A, B, C sai? A "Bạn nên đi đi"; B "Nó không phải ảnh"; C sai thì động từ.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "6. Minh: “Can you explain how to join the forum?” - Hoa: “________”",
+                options: ["Certainly. First, enter your school email.", "The forum is big.", "I don’t have pressure.", "It was interesting."],
+                correct: 0,
+                exp: `1. Dịch câu: Minh: "Bạn có thể giải thích cách tham gia diễn đàn không?"
+2. Tại sao chọn A? "Certainly. First, enter your school email." (Chắc chắn rồi. Đầu tiên, hãy nhập email trường của bạn) đáp ứng đúng yêu cầu hướng dẫn các bước.
+3. Tại sao B, C, D sai? B "Diễn đàn rất to"; C "Tôi không có áp lực"; D "Nó đã rất thú vị" -> Đều lạc đề.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "7. Linh: “Would you mind turning off your notifications?” - Mai: “________”",
+                options: ["Yes, I mind off.", "Not at all. I’ll do it now.", "No, it is a notification.", "I turned it tomorrow."],
+                correct: 1,
+                exp: `1. Dịch câu: Linh: "Bạn có phiền tắt thông báo của bạn đi không?"
+2. Lưu ý giao tiếp quan trọng: Với câu hỏi "Would you mind...?", nếu ĐỒNG Ý thực hiện hành động (không phiền) thì trả lời "Not at all" (Không phiền chút nào).
+3. Tại sao chọn B? "Not at all. I'll do it now." (Không phiền đâu. Mình sẽ làm ngay đây).
+4. Tại sao A, C, D sai? A sai cú pháp; C trả lời không khớp; D sai thì.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "8. Tom: “Do you think the countryside is peaceful?” - An: “________”",
+                options: ["It is on Monday.", "There are many fields.", "I went by bus.", "In my opinion, it is very relaxing."],
+                correct: 3,
+                exp: `1. Dịch câu: Tom: "Bạn có nghĩ rằng vùng nông thôn rất yên bình không?"
+2. Phân tích: Hỏi ý kiến "Do you think...?".
+3. Tại sao chọn D? "In my opinion, it is very relaxing." (Theo ý kiến của mình, nó rất thư thái) nêu quan điểm cá nhân phù hợp.
+4. Tại sao A, B, C sai? A "Nó vào thứ Hai"; B "Có nhiều cánh đồng"; C "Tôi đi bằng xe buýt".`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "9. Hoa: “Your presentation was excellent.” - Nam: “________”",
+                options: ["Thank you very much.", "You must leave.", "I don’t present.", "No, it wasn’t a school."],
+                correct: 0,
+                exp: `1. Dịch câu: Hoa: "Bài thuyết trình của bạn thật xuất sắc."
+2. Phân tích: Đáp lại lời khen ngợi.
+3. Tại sao chọn A? "Thank you very much." (Cảm ơn bạn rất nhiều) là câu đáp lại khiêm tốn, lịch sự.
+4. Tại sao B, C, D sai? Không liên quan hoặc thô lỗ trong giao tiếp.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "10. Mai: “I’m under a lot of pressure.” - Linh: “________”",
+                options: ["Join no clubs.", "You should get more notifications.", "Why don’t you talk to the school counsellor?", "Pressure is a noun."],
+                correct: 2,
+                exp: `1. Dịch câu: Mai: "Tớ đang chịu rất nhiều áp lực."
+2. Phân tích: Đưa ra lời khuyên cho bạn bè khi gặp căng thẳng/áp lực.
+3. Tại sao chọn C? "Why don't you talk to the school counsellor?" (Tại sao bạn không nói chuyện với tư vấn viên học đường?) là lời khuyên hữu ích nhất.
+4. Tại sao A, B, D sai? Lời khuyên không đúng hoặc giải thích từ vựng vô nghĩa.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "11. Nam: “Would you like to join the chess club?” - Minh: “________”",
+                options: ["I’d love to, but I have a music lesson.", "I don’t know chess is.", "Yes, I would like to play chess.", "That’s a club."],
+                correct: 0,
+                exp: `1. Dịch câu: Nam: "Bạn có muốn tham gia câu lạc bộ cờ vua không?"
+2. Phân tích: Từ chối lời mời một cách lịch sự (Declining politely).
+3. Tại sao chọn A? Cấu trúc "I'd love to, but..." (Mình rất thích, nhưng...) đưa ra lý do chính đáng để từ chối lịch sự.
+4. Tại sao B, C, D sai? B sai ngữ pháp; C chưa đủ tự nhiên bằng A; D trả lời ngớ ngẩn.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "12. Lan: “What do you think of the village festival?” - Hoa: “________”",
+                options: ["It takes place.", "I think it was exciting and meaningful.", "I am a festival.", "No, I don’t think."],
+                correct: 1,
+                exp: `1. Dịch câu: Lan: "Bạn nghĩ sao về lễ hội làng?"
+2. Phân tích: Hỏi nhận xét cảm nghĩ về sự kiện.
+3. Tại sao chọn B? "I think it was exciting and meaningful." (Tớ nghĩ nó rất sôi động và có ý nghĩa) bày tỏ quan điểm đầy đủ.
+4. Tại sao A, C, D sai? A "Nó diễn ra" (chưa hết câu); C "Tôi là lễ hội"; D trả lời cụt ngủn.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "13. Tom: “Could you show me how to upload a photo to the forum?” - Mai: “________”",
+                options: ["Sure. Click the attachment icon and select your photo.", "I went to the farm.", "It is a cow.", "You’re welcome."],
+                correct: 0,
+                exp: `1. Dịch câu: Tom: "Bạn có thể chỉ cho tớ cách tải ảnh lên diễn đàn không?"
+2. Phân tích: Yêu cầu hướng dẫn thao tác máy tính.
+3. Tại sao chọn A? "Sure. Click the attachment icon..." (Chắc chắn rồi. Bấm vào biểu tượng đính kèm và chọn ảnh) hướng dẫn chi tiết đúng thao tác.
+4. Tại sao B, C, D sai? Lạc đề hoàn toàn.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "14. Linh: “Your handmade card is lovely.” - An: “________”",
+                options: ["I’m glad you like it.", "I don’t handmade.", "You are lovely card.", "No, thanks."],
+                correct: 0,
+                exp: `1. Dịch câu: Linh: "Tấm thiệp làm bằng tay của bạn đáng yêu quá."
+2. Phân tích: Đáp lại lời khen về đồ làm thủ công.
+3. Tại sao chọn A? "I'm glad you like it." (Mình rất vui vì bạn thích nó) là phản hồi lịch sự nhất.
+4. Tại sao B, C, D sai? B, C sai ngữ pháp; D dùng đáp lại lời đề nghị.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "15. Minh: “Do you fancy doing DIY this afternoon?” - Tom: “________”",
+                options: ["I do not have a tool.", "DIY is yesterday.", "Sorry, I can’t. I have a test tomorrow.", "Please don’t."],
+                correct: 2,
+                exp: `1. Dịch câu: Minh: "Chiều nay bạn có thích làm đồ tự làm (DIY) không?"
+2. Phân tích: Từ chối lời rủ do bận việc.
+3. Tại sao chọn C? "Sorry, I can't. I have a test tomorrow." (Xin lỗi, mình không thể. Nửa mai mình có bài kiểm tra) là lời từ chối khéo léo.
+4. Tại sao A, B, D sai? Không tự nhiên trong giao tiếp.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "16. Mai: “Can I post this group photo online?” - Lan: “________”",
+                options: ["Yes, but you should ask everyone in the photo first.", "The photo is blue.", "Upload it without permission.", "I don’t know online."],
+                correct: 0,
+                exp: `1. Dịch câu: Mai: "Tớ có thể đăng bức ảnh nhóm này lên mạng không?"
+2. Phân tích: Xin phép và lời nhắc nhở bảo vệ quyền riêng tư.
+3. Tại sao chọn A? "Yes, but you should ask everyone in the photo first." (Được chứ, nhưng bạn nên hỏi ý kiến mọi người trong ảnh trước) hợp lý và an toàn.
+4. Tại sao B, C, D sai? B nói về màu sắc; C vi phạm quy tắc an toàn; D không hiểu câu hỏi.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "17. Nam: “How can I reduce exam stress?” - Counsellor: “________”",
+                options: ["Stop talking to friends.", "Stay up later every night.", "Make a realistic timetable and take short breaks.", "Check every notification."],
+                correct: 2,
+                exp: `1. Dịch câu: Nam: "Làm thế nào để em giảm bớt căng thẳng thi cử ạ?"
+2. Phân tích: Lời khuyên khoa học từ tư vấn viên học đường.
+3. Tại sao chọn C? "Make a realistic timetable and take short breaks." (Hãy lập thời gian biểu thực tế và nghỉ giải lao ngắn) là giải pháp giúp quản lý thời gian và giảm áp lực tốt nhất.
+4. Tại sao A, B, D sai? Vì các hành động này chỉ làm tăng căng thẳng thêm.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "18. Hoa: “What do you like most about village life?” - Linh: “________”",
+                options: ["I like the peaceful atmosphere most.", "It is a village.", "I went last week.", "There are 20 houses."],
+                correct: 0,
+                exp: `1. Dịch câu: Hoa: "Bạn thích điều gì nhất về cuộc sống ở làng quê?"
+2. Phân tích: Hỏi về điểm ưa thích nhất.
+3. Tại sao chọn A? "I like the peaceful atmosphere most." (Tớ thích nhất không khí yên bình ở đó) trả lời đúng trọng tâm.
+4. Tại sao B, C, D sai? Lạc đề, trả lời số lượng hoặc thời gian.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "19. Tom: “Shall we go to the cinema after school?” - Mark: “________”",
+                options: ["That sounds great.", "I cinema every day.", "It is after school.", "No, cinema is not."],
+                correct: 0,
+                exp: `1. Dịch câu: Tom: "Chúng ta đi xem phim sau giờ học nhé?"
+2. Phân tích: Rủ rê "Shall we...?"
+3. Tại sao chọn A? "That sounds great." (Nghe tuyệt đấy) thể hiện sự đồng ý hào hứng.
+4. Tại sao B, C, D sai? Cú pháp câu sai và không đúng ngữ cảnh.`
+            },
+            {
+                exercise: "EXERCISE 3. FUNCTIONAL COMMUNICATION",
+                type: "single",
+                q: "20. Mai: “Could you speak a little more quietly?” - Nam: “________”",
+                options: ["You should speak.", "I speak quiet yesterday.", "It is not a voice.", "Sorry. I’ll lower my voice."],
+                correct: 3,
+                exp: `1. Dịch câu: Mai: "Bạn có thể nói nhỏ hơn một chút được không?"
+2. Phân tích: Lời phàn nàn/yêu cầu nói nhỏ lại.
+3. Tại sao chọn D? "Sorry. I'll lower my voice." (Xin lỗi nhé. Tớ sẽ hạ giọng xuống) thể hiện sự lịch sự nhận lỗi và điều chỉnh.
+4. Tại sao A, B, C sai? Sai phản ứng giao tiếp chuẩn.`
+            },
+
+            /* EXERCISE 4: SIGNS, NOTICES AND ADVERTISEMENTS (20 Qs) */
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "sign",
+                signType: "SILENCE",
+                q: "1. What does the sign mean? [SILENT ZONE - PLEASE KEEP QUIET]",
+                options: [
+                    "You must keep your hands away from your face at all times.",
+                    "You should stay quiet and avoid interrupting people in this area.",
+                    "You are not allowed to enter this room without permission.",
+                    "You can talk loudly as long as you do not touch anything."
+                ],
+                correct: 1,
+                exp: `1. Dịch câu hỏi: "Biển báo này có nghĩa là gì? [KHU VỰC YÊN LẶNG - VUI LÒNG GIỮ TRẬT TỰ]"
+2. Phân tích 4 đáp án:
+A. Bạn phải để tay xa mặt.
+B. Bạn nên giữ yên lặng và tránh làm phiền người khác trong khu vực này.
+C. Bạn không được vào phòng nếu không xin phép.
+D. Bạn có thể nói to miễn là không chạm vào đồ đạc.
+3. Tại sao chọn B? "Silent Zone" yêu cầu mọi người giữ yên lặng (stay quiet).
+4. Tại sao A, C, D sai? Lạc đề hoàn toàn so với biển báo giữ trật tự.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "sign",
+                signType: "PHONE_SILENT",
+                q: "2. What should students do in this area? [SILENCE YOUR PHONE IN STUDY AREA]",
+                options: [
+                    "You must charge your phone battery before using it here.",
+                    "You are not allowed to bring mobile phones into this area.",
+                    "You should turn off your phone sound or switch it to silent mode.",
+                    "You must turn on your phone speakers to listen to audio."
+                ],
+                correct: 2,
+                exp: `1. Dịch câu hỏi: "Học sinh nên làm gì ở khu vực này? [TẮT CHUÔNG ĐIỆN THOẠI TRONG KHU VỰC HỌC TẬP]"
+2. Phân tích: Biển báo yêu cầu chuyển điện thoại sang chế độ im lặng.
+3. Tại sao chọn C? "turn off your phone sound or switch it to silent mode" khớp với biển báo "Silence your phone".
+4. Tại sao A, B, D sai? Biển báo không cấm mang điện thoại (B) hay bắt sạc pin (A), cũng không bảo bật loa (D).`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "sign",
+                signType: "NO_BULLYING",
+                q: "3. What does this sign mean? [NO BULLYING ZONE]",
+                options: [
+                    "Students are encouraged to settle their arguments by themselves.",
+                    "You must report any violent behavior to the principal immediately.",
+                    "Physical fighting is strictly forbidden in the school playground.",
+                    "Threatening, hurting, or frightening other students is strictly prohibited."
+                ],
+                correct: 3,
+                exp: `1. Dịch câu hỏi: "Biển báo này có nghĩa là gì? [KHU VỰC KHÔNG BẮT NẠT]"
+2. Phân tích: Hành vi bắt nạt (bullying) bao gồm đe dọa, làm tổn thương hay làm hoảng sợ học sinh khác.
+3. Tại sao chọn D? "Threatening, hurting, or frightening other students is strictly prohibited." định nghĩa chính xác về cấm bắt nạt.
+4. Tại sao A, B, C sai? A khuyến khích tự cãi nhau; B báo hiệu trưởng; C chỉ nói đánh nhau thể xác.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "sign",
+                signType: "BOOTS",
+                q: "4. What must visitors wear on the farm tour? [SAFETY BOOTS REQUIRED]",
+                options: [
+                    "You must wear protective shoes or boots in this area to protect your feet.",
+                    "You are required to take off your shoes before entering this building.",
+                    "Only sports shoes or sneakers are allowed to be worn here.",
+                    "You can purchase new safety footwear at this customer service desk."
+                ],
+                correct: 0,
+                exp: `1. Dịch câu hỏi: "Khách tham quan phải mang gì trong chuyến tham quan trang trại? [YÊU CẦU MANG GIÀY BẢO HỘ]"
+2. Phân tích: "Safety boots required" nghĩa là bắt buộc đi giày bảo hộ.
+3. Tại sao chọn A? "You must wear protective shoes or boots..." diễn giải đúng yêu cầu mang giày bảo hộ.
+4. Tại sao B, C, D sai? B bảo cởi giày; C chỉ cho đi giày thể thao; D bảo mua giày.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "sign",
+                signType: "NO_FEEDING",
+                q: "5. What is prohibited in the animal area? [DO NOT FEED THE ANIMALS]",
+                options: [
+                    "You are not allowed to bring your dogs or pets into this park.",
+                    "You must not feed the dogs or animals in this area.",
+                    "You should keep your dog on a leash at all times.",
+                    "You can purchase food for animals at the entrance."
+                ],
+                correct: 1,
+                exp: `1. Dịch câu hỏi: "Điều gì bị cấm ở khu vực động vật? [KHÔNG CHO ĐỘNG VẬT ĂN]"
+2. Phân tích: Biển cấm cho động vật ăn (Do not feed the animals).
+3. Tại sao chọn B? "You must not feed the dogs or animals in this area." khớp hoàn toàn.
+4. Tại sao A, C, D sai? A cấm mang thú cưng; C xích chó; D bảo mua thức ăn.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "sign",
+                signType: "NO_PHOTO",
+                q: "6. What is not allowed at the club event? [NO CAMERA / NO PHOTOS]",
+                options: [
+                    "You must buy a ticket before taking photos or videos here.",
+                    "You are allowed to use your mobile phone to take photos, but not cameras.",
+                    "Taking photos with cameras or smartphones is not allowed here.",
+                    "You should turn off your mobile devices before entering this building."
+                ],
+                correct: 2,
+                exp: `1. Dịch câu hỏi: "Điều gì không được phép tại sự kiện câu lạc bộ? [CẤM CHỤP ẢNH / CẤM MÁY ẢNH]"
+2. Phân tích: Cấm chụp hình dưới mọi hình thức.
+3. Tại sao chọn C? "Taking photos with cameras or smartphones is not allowed here." đúng ý nghĩa cấm chụp ảnh.
+4. Tại sao A, B, D sai? A bảo mua vé mới được chụp; B bảo được chụp bằng điện thoại; D bảo tắt máy.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "sign",
+                signType: "NO_TOUCH",
+                q: "7. What must visitors avoid doing? [DO NOT TOUCH EXHIBITS]",
+                options: [
+                    "You must clean your hands before touching anything in this room.",
+                    "You are not allowed to put your hands on the items or surfaces here.",
+                    "You should hold onto the handrail carefully while walking.",
+                    "Only staff members can move objects to another location."
+                ],
+                correct: 1,
+                exp: `1. Dịch câu hỏi: "Khách tham quan phải tránh làm điều gì? [CẤM SỜ/CHẠM VÀO TANG VẬT TRƯNG BÀY]"
+2. Phân tích: "Do not touch" tức là cấm chạm tay vào các đồ vật.
+3. Tại sao chọn B? "You are not allowed to put your hands on the items or surfaces here."
+4. Tại sao A, C, D sai? A bảo rửa tay trước khi sờ; C bảo bám vào tay vịn; D nói về nhân viên.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "sign",
+                signType: "NO_TOUCH",
+                q: "8. What does this sign mean? [PLEASE DO NOT TOUCH]",
+                options: [
+                    "You must clean your hands before touching anything in this room.",
+                    "Only staff members can move objects to another location.",
+                    "You should hold onto the handrail carefully while walking.",
+                    "You are not allowed to put your hands on the items or surfaces here."
+                ],
+                correct: 3,
+                exp: `1. Dịch câu hỏi: "Biển báo này có nghĩa là gì? [VUI LÒNG KHÔNG CHẠM VÀO]"
+2. Phân tích: Yêu cầu không được đặt tay hay chạm vào bề mặt vật trưng bày.
+3. Tại sao chọn D? "You are not allowed to put your hands on the items or surfaces here." chính xác.
+4. Tại sao A, B, C sai? Không khớp với biển báo cấm chạm vào đồ.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "notice",
+                noticeTitle: "WEEKEND DIY CLUB",
+                noticeBody: "Saturday, 9.00–11.00 a.m. • Room 12<br>Bring a small box and basic tools. Register by Thursday.",
+                q: "9. What must students do before attending?",
+                options: ["Buy a dollhouse.", "Register by Thursday.", "Arrive on Sunday.", "Bring sports equipment."],
+                correct: 1,
+                exp: `1. Dịch thông báo: "CLB DIY CUỐI TUẦN - Thứ Bảy 9h-11h - Phòng 12. Mang theo hộp nhỏ và công cụ cơ bản. Đăng ký trước thứ Năm."
+2. Phân tích câu hỏi: Học sinh phải làm gì trước khi tham gia?
+3. Tại sao chọn B? Trong thông báo ghi rõ "Register by Thursday" (Đăng ký trước thứ Năm).
+4. Tại sao A, C, D sai? A mua nhà búp bê; C đến vào Chủ nhật; D mang đồ thể thao (đều sai sự thật trong thông báo).`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "notice",
+                noticeTitle: "COUNTRYSIDE CYCLING TRIP",
+                noticeBody: "Meet at the school gate at 7.00 a.m. Wear a helmet and bring water. The trip finishes at noon.",
+                q: "10. What should participants bring?",
+                options: ["A helmet and water.", "A computer.", "Farm animals.", "A school uniform."],
+                correct: 0,
+                exp: `1. Dịch thông báo: "CHUYẾN ĐẠP XE DÃ NGOẠI NÔNG THÔN - Tập trung tại cổng trường lúc 7h00. Đội mũ bảo hiểm và mang theo nước. Chuyến đi kết thúc lúc giữa trưa."
+2. Phân tích: Người tham gia nên mang theo gì?
+3. Tại sao chọn A? "Wear a helmet and bring water" -> Cần đội mũ bảo hiểm và mang nước.
+4. Tại sao B, C, D sai? Thông báo không hề nhắc tới máy tính, vật nuôi hay đồng phục.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "notice",
+                noticeTitle: "TEEN WELL-BEING WORKSHOP",
+                noticeBody: "Friday, 2.00–4.00 p.m. • School Hall<br>Stress-management tips and a talk with the counsellor.",
+                q: "11. What is the main purpose of the notice?",
+                options: [
+                    "To invite students to a well-being workshop.",
+                    "To advertise a film.",
+                    "To announce a farm trip.",
+                    "To sell phones."
+                ],
+                correct: 0,
+                exp: `1. Dịch thông báo: "HỘI THẢO SỨC KHỎE TINH THẦN TUỔI TEEN - Thứ Sáu 14h-16h tại Hội trường. Mẹo kiểm soát căng thẳng và trò chuyện với tư vấn viên."
+2. Phân tích câu hỏi: Mục đích chính của thông báo là gì?
+3. Tại sao chọn A? Để mời học sinh tham gia hội thảo về sức khỏe tinh thần/thể chất (well-being workshop).
+4. Tại sao B, C, D sai? Không phải quảng cáo phim, chuyến thăm trang trại hay bán điện thoại.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "notice",
+                noticeTitle: "ARTS AND CRAFTS FAIR",
+                noticeBody: "Buy two handmade cards and get the third one free. All money supports future club activities.",
+                q: "12. What does the advertisement offer?",
+                options: [
+                    "Three free cards.",
+                    "A free third card after buying two.",
+                    "Free club membership.",
+                    "Two cards for one."
+                ],
+                correct: 1,
+                exp: `1. Dịch quảng cáo: "HỘI CHỢ THỦ CÔNG MỸ THUẬT - Mua 2 tấm thiệp làm bằng tay tặng 1 tấm thiệp miễn phí. Tất cả tiền thu được sẽ hỗ trợ hoạt động tương lai của CLB."
+2. Phân tích câu hỏi: Quảng cáo đưa ra ưu đãi gì?
+3. Tại sao chọn B? "A free third card after buying two" (Tặng miễn phí tấm thiệp thứ ba sau khi mua 2 tấm) chính là chương trình mua 2 tặng 1.
+4. Tại sao A, C, D sai? A bảo tặng miễn phí cả 3 tấm; C bảo miễn phí làm hội viên; D mua 1 tặng 2.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "notice",
+                noticeTitle: "GREEN FIELD FARM DAY",
+                noticeBody: "Ploughing demonstration, feeding pigs and drying rice.<br>Saturday, 8.00 a.m.–3.00 p.m. Register with Ms Hoa.",
+                q: "13. What must students do to take part?",
+                options: ["Register with Ms Hoa.", "Bring a pig.", "Arrive on Friday.", "Pay for rice."],
+                correct: 0,
+                exp: `1. Dịch thông báo: "NGÀY HỘI TRANG TRẠI XANH - Biểu diễn cày ruộng, cho lợn ăn và phơi lúa. Thứ Bảy 8h-15h. Đăng ký với cô Hoa."
+2. Phân tích: Học sinh phải làm gì để tham gia?
+3. Tại sao chọn A? Thông báo ghi rõ "Register with Ms Hoa" (Đăng ký với cô Hoa).
+4. Tại sao B, C, D sai? B bảo mang con lợn; C đến vào thứ Sáu; D trả tiền lúa.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "notice",
+                noticeTitle: "SCHOOL FORUM RULES",
+                noticeBody: "Use your real school account. Ask permission before uploading group photos. Never share private information.",
+                q: "14. Which action is allowed?",
+                options: [
+                    "Sharing passwords.",
+                    "Uploading a group photo after asking permission.",
+                    "Using a false account.",
+                    "Posting private information."
+                ],
+                correct: 1,
+                exp: `1. Dịch quy định: "QUY ĐỊNH DIỄN ĐÀN TRƯỜNG - Sử dụng tài khoản thực của trường. Xin phép trước khi đăng ảnh nhóm. Không bao giờ chia sẻ thông tin riêng tư."
+2. Phân tích: Hành động nào ĐƯỢC PHÉP?
+3. Tại sao chọn B? "Uploading a group photo after asking permission" (Đăng ảnh nhóm sau khi đã xin phép) đúng chuẩn quy định.
+4. Tại sao A, C, D sai? Đều là những hành vi vi phạm nghiêm trọng quy định diễn đàn.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "notice",
+                noticeTitle: "LEISURE ACTIVITY SURVEY",
+                noticeBody: "Complete the online form by Monday. Answer five questions about your weekend activities.",
+                q: "15. What should students do?",
+                options: ["Attend a sports match.", "Complete an online survey.", "Make five puzzles.", "Visit a village."],
+                correct: 1,
+                exp: `1. Dịch thông báo: "KHẢO SÁT HOẠT ĐỘNG THỜI GIAN RẢNH - Hoàn thành biểu mẫu trực tuyến trước thứ Hai. Trả lời 5 câu hỏi về hoạt động cuối tuần của bạn."
+2. Phân tích: Học sinh nên làm gì?
+3. Tại sao chọn B? "Complete an online survey" (Hoàn thành cuộc khảo sát trực tuyến).
+4. Tại sao A, C, D sai? Không khớp nội dung làm khảo sát trực tuyến.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "notice",
+                noticeTitle: "VILLAGE PHOTO COMPETITION",
+                noticeBody: "Theme: Peaceful countryside life. Send one original photo by 20 October. No edited images.",
+                q: "16. Which photo is suitable?",
+                options: [
+                    "An original photo of a paddy field.",
+                    "An edited city poster.",
+                    "A copied image.",
+                    "A photo sent after the deadline."
+                ],
+                correct: 0,
+                exp: `1. Dịch thông báo: "CUỘC THI ẢNH LÀNG QUÊ - Chủ đề: Cuộc sống nông thôn yên bình. Gửi 1 bức ảnh gốc trước ngày 20 tháng 10. Không chấp nhận ảnh đã chỉnh sửa."
+2. Phân tích: Bức ảnh nào phù hợp?
+3. Tại sao chọn A? "An original photo of a paddy field" (Một bức ảnh gốc chụp cánh đồng lúa) vừa hợp chủ đề vừa đúng tiêu chuẩn ảnh chưa chỉnh sửa.
+4. Tại sao B, C, D sai? B là ảnh thành phố đã chỉnh sửa; C là ảnh sao chép; D gửi quá hạn.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "notice",
+                noticeTitle: "CHESS CLUB NOTICE",
+                noticeBody: "Meeting moved from Friday to Thursday this week. Place: Library • Time: 3.30 p.m.",
+                q: "17. When will the club meet this week?",
+                options: ["Thursday at 3.30 p.m.", "Friday at 3.30 p.m.", "Thursday morning.", "Monday afternoon."],
+                correct: 0,
+                exp: `1. Dịch thông báo: "THÔNG BÁO CLB CỜ VUA - Cuộc họp tuần này chuyển từ thứ Sáu sang thứ Năm. Địa điểm: Thư viện - Thời gian: 15h30."
+2. Phân tích: Tuần này CLB sẽ họp khi nào?
+3. Tại sao chọn A? "Thursday at 3.30 p.m." (Thứ Năm lúc 15h30).
+4. Tại sao B, C, D sai? Vì cuộc họp đã chuyển sang chiều thứ Năm, không phải thứ Sáu hay thứ Hai.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "notice",
+                noticeTitle: "SAFE SOCIAL MEDIA TALK",
+                noticeBody: "Parents and students are welcome. Tuesday, 6.30 p.m. • Community Centre • Free entry",
+                q: "18. Who may attend the talk?",
+                options: ["Only teachers.", "Parents and students.", "Only club leaders.", "Tourists only."],
+                correct: 1,
+                exp: `1. Dịch thông báo: "BUỔI TRÒ CHUYỆN MẠNG XÃ HỘI AN TOÀN - Chào đón phụ huynh và học sinh. Thứ Ba 18h30 tại Nhà văn hóa cộng đồng. Vào cửa miễn phí."
+2. Phân tích: Ai có thể tham dự buổi trò chuyện?
+3. Tại sao chọn B? "Parents and students" (Phụ huynh và học sinh).
+4. Tại sao A, C, D sai? Thông báo mở rộng cho cả phụ huynh và học sinh chứ không giới hạn chỉ giáo viên hay khách du lịch.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "sign",
+                signType: "SILENCE",
+                q: "19. What should people do in this library area? [QUIET PLEASE - EXAMINATION IN PROGRESS]",
+                options: [
+                    "Speak softly or remain completely silent.",
+                    "Play loud music to relax.",
+                    "Bring pets into the room.",
+                    "Take photos of test papers."
+                ],
+                correct: 0,
+                exp: `1. Dịch thông báo: "VUI LÒNG GIỮ YÊN LẶNG - ĐANG CÓ KỲ THI DIỄN RA"
+2. Phân tích: Mọi người nên làm gì ở khu vực này?
+3. Tại sao chọn A? "Speak softly or remain completely silent" (Nói nhỏ nhẹ hoặc giữ im lặng hoàn toàn).
+4. Tại sao B, C, D sai? Bật nhạc to, mang thú cưng hay chụp ảnh đề thi đều vi phạm nghiêm trọng quy định yên lặng.`
+            },
+            {
+                exercise: "EXERCISE 4. SIGNS, NOTICES AND ADVERTISEMENTS",
+                type: "notice",
+                noticeTitle: "SCHOOL COUNSELLOR OFFICE",
+                noticeBody: "Open daily 8.00 a.m. - 4.00 p.m. Drop in or make an appointment via school app.",
+                q: "20. How can students contact the counsellor?",
+                options: [
+                    "Drop in directly or book via the school app.",
+                    "Send a letter by post.",
+                    "Call emergency services.",
+                    "Visit at midnight."
+                ],
+                correct: 0,
+                exp: `1. Dịch thông báo: "PHÒNG TƯ VẤN HỌC ĐƯỜNG - Mở cửa hàng ngày 8h00 - 16h00. Ghé trực tiếp hoặc hẹn lịch qua ứng dụng của trường."
+2. Phân tích: Học sinh liên lạc với tư vấn viên bằng cách nào?
+3. Tại sao chọn A? "Drop in directly or book via the school app" (Đến trực tiếp hoặc đặt lịch qua ứng dụng trường).
+4. Tại sao B, C, D sai? Sai hình thức liên lạc ghi trong thông báo.`
+            },
+
+            /* EXERCISE 5: CLOZE TESTS (20 Qs) */
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 1: A LEISURE CLUB",
+                type: "cloze",
+                passage: "Our school has opened a new leisure club. Students can choose activities that they are interested (1) ________. Some enjoy (2) ________ puzzles, while others prefer playing sport. The club meets every Friday, (3) ________ students can relax after a busy week. Members are encouraged (4) ________ new activities and make friends. If you fancy (5) ________ the club, complete the form by Wednesday.",
+                q: "Question 1 (PASSAGE 1)",
+                options: ["at", "in", "on", "for"],
+                correct: 1,
+                exp: `1. Phân tích cấu trúc: "be interested IN + N/V-ing" (thích/quan tâm đến cái gì).
+2. Dịch nghĩa vế câu: "Học sinh có thể chọn các hoạt động mà họ quan tâm."
+3. Tại sao chọn B? Giới từ đi với 'interested' bắt buộc là 'in'.
+4. Tại sao A, C, D sai? 'at', 'on', 'for' không đúng cấu trúc ngữ pháp đi kèm với 'interested'.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 1: A LEISURE CLUB",
+                type: "cloze",
+                passage: "Our school has opened a new leisure club... Some enjoy (2) ________ puzzles...",
+                q: "Question 2 (PASSAGE 1)",
+                options: ["do", "doing", "to did", "done"],
+                correct: 1,
+                exp: `1. Phân tích cụm từ và cấu trúc: "enjoy + V-ing" và "do puzzles" (giải câu đố).
+2. Dịch nghĩa vế câu: "Một số học sinh thích giải các câu đố..."
+3. Tại sao chọn B? Sau 'enjoy' đòi hỏi dạng V-ing -> 'doing'.
+4. Tại sao A, C, D sai? Sai dạng động từ theo sau 'enjoy'.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 1: A LEISURE CLUB",
+                type: "cloze",
+                passage: "Our school has opened a new leisure club... The club meets every Friday, (3) ________ students can relax after a busy week...",
+                q: "Question 3 (PASSAGE 1)",
+                options: ["but", "so", "or", "for"],
+                correct: 1,
+                exp: `1. Phân tích liên từ chỉ kết quả:
+A. but: nhưng.
+B. so: vì vậy / nên.
+C. or: hoặc.
+D. for: vì.
+2. Dịch nghĩa vế câu: "Câu lạc bộ sinh hoạt vào mỗi thứ Sáu, vì vậy học sinh có thể thư giãn sau một tuần bận rộn."
+3. Tại sao chọn B? Việc thư giãn là kết quả của việc CLB họp vào thứ Sáu -> chọn 'so'.
+4. Tại sao A, C, D sai? Không phù hợp với mối quan hệ nguyên nhân - kết quả.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 1: A LEISURE CLUB",
+                type: "cloze",
+                passage: "Our school has opened a new leisure club... Members are encouraged (4) ________ new activities and make friends...",
+                q: "Question 4 (PASSAGE 1)",
+                options: ["try", "trying", "to try", "tried"],
+                correct: 2,
+                exp: `1. Cấu trúc bị động: "be encouraged + TO V-inf" (được khuyến khích làm gì).
+2. Dịch nghĩa vế câu: "Các thành viên được khuyến khích thử sức với các hoạt động mới..."
+3. Tại sao chọn C? Động từ ở dạng 'to try'.
+4. Tại sao A, B, D sai? Không dùng V-ing hay V-ed sau 'be encouraged'.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 1: A LEISURE CLUB",
+                type: "cloze",
+                passage: "Our school has opened a new leisure club... If you fancy (5) ________ the club, complete the form by Wednesday.",
+                q: "Question 5 (PASSAGE 1)",
+                options: ["join", "joining", "to joined", "joins"],
+                correct: 1,
+                exp: `1. Cấu trúc: "fancy + V-ing" (thích/muốn làm gì).
+2. Dịch nghĩa vế câu: "Nếu bạn muốn tham gia câu lạc bộ, hãy hoàn thành biểu mẫu trước thứ Tư."
+3. Tại sao chọn B? Sau 'fancy' là V-ing -> 'joining'.
+4. Tại sao A, C, D sai? Sai ngữ pháp chia động từ sau 'fancy'.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 2: A VILLAGE VISIT",
+                type: "cloze",
+                passage: "Last summer, our class stayed in a picturesque village. Every morning, the farmers worked (6) ________ than we expected. We watched them (7) ________ rice and feed their livestock. The local people were very (8) ________ and welcomed us warmly. In the afternoon, we cycled beside the paddy fields. Life there moved (9) ________ than in the city, but it was never boring. The trip helped us understand countryside life (10) ________.",
+                q: "Question 6 (PASSAGE 2)",
+                options: ["hard", "harder", "hardest", "more hard"],
+                correct: 1,
+                exp: `1. Phân tích: 'hard' là trạng từ ngắn. Phía sau có 'than' -> Cần dạng so sánh hơn.
+2. Dịch nghĩa vế câu: "Mỗi buổi sáng, các bác nông dân làm việc chăm chỉ hơn chúng tôi nghĩ."
+3. Tại sao chọn B? So sánh hơn của 'hard' là 'harder'.
+4. Tại sao A, C, D sai? A là dạng gốc; C là so sánh nhất; D viết sai quy tắc.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 2: A VILLAGE VISIT",
+                type: "cloze",
+                passage: "Last summer, our class stayed in a picturesque village... We watched them (7) ________ rice and feed their livestock...",
+                q: "Question 7 (PASSAGE 2)",
+                options: ["harvest", "harvested", "to harvesting", "harvests"],
+                correct: 0,
+                exp: `1. Phân tích cấu trúc giác quan: "watch + O + V-inf" (chứng kiến toàn bộ quá trình).
+2. Dịch nghĩa vế câu: "Chúng tôi quan sát họ thu hoạch lúa và cho gia súc ăn."
+3. Tại sao chọn A? Động từ 'harvest' dạng nguyên thể không 'to' (chú ý động từ vế sau 'and feed' cũng ở dạng nguyên thể).
+4. Tại sao B, C, D sai? Không dùng V-ed hay to-V ở đây.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 2: A VILLAGE VISIT",
+                type: "cloze",
+                passage: "Last summer, our class stayed in a picturesque village... The local people were very (8) ________ and welcomed us warmly...",
+                q: "Question 8 (PASSAGE 2)",
+                options: ["hospitable", "hospitality", "hospitably", "hospital"],
+                correct: 0,
+                exp: `1. Phân tích từ loại: Sau động từ tobe 'were very...' cần một TÍNH TỪ.
+2. Phân tích 4 đáp án: A. hospitable (adj: hiếu khách); B. hospitality (n: lòng hiếu khách); C. hospitably (adv); D. hospital (n: bệnh viện).
+3. Dịch nghĩa vế câu: "Người dân địa phương rất hiếu khách và chào đón chúng tôi nồng nhiệt."
+4. Tại sao chọn A? Vừa đúng tính từ vừa khớp ý nghĩa mô tả con người.
+5. Tại sao B, C, D sai? B, D là danh từ; C là trạng từ.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 2: A VILLAGE VISIT",
+                type: "cloze",
+                passage: "Last summer, our class stayed in a picturesque village... Life there moved (9) ________ than in the city, but it was never boring...",
+                q: "Question 9 (PASSAGE 2)",
+                options: ["more slowly", "slow", "slowest", "more slow"],
+                correct: 0,
+                exp: `1. Phân tích: 'moved' là động từ thường -> cần trạng từ 'slowly'. Có 'than' -> dạng so sánh hơn của trạng từ dài.
+2. Dịch nghĩa vế câu: "Cuộc sống ở đó trôi qua chậm rãi hơn ở thành phố..."
+3. Tại sao chọn A? "more slowly + than" đúng cấu trúc so sánh hơn của trạng từ.
+4. Tại sao B, C, D sai? B là tính từ; C là so sánh nhất; D sai cấu trúc.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 2: A VILLAGE VISIT",
+                type: "cloze",
+                passage: "Last summer, our class stayed in a picturesque village... The trip helped us understand countryside life (10) ________.",
+                q: "Question 10 (PASSAGE 2)",
+                options: ["better", "good", "best", "more good"],
+                correct: 0,
+                exp: `1. Phân tích: Bổ nghĩa cho động từ 'understand' cần trạng từ 'well'. Ở đây so sánh việc hiểu rõ hơn trước chuyến đi -> dùng dạng so sánh hơn 'better'.
+2. Dịch nghĩa vế câu: "Chuyến đi giúp chúng tôi hiểu rõ hơn về cuộc sống ở nông thôn."
+3. Tại sao chọn A? 'Better' là dạng so sánh hơn của trạng từ 'well'.
+4. Tại sao B, C, D sai? B là tính từ; C là so sánh nhất; D sai từ vựng.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 3: DEALING WITH STRESS",
+                type: "cloze",
+                passage: "Before the midterm tests, Mai felt under a lot of (11) ________. She stayed up late, (12) ________ she became tired and impatient. The school counsellor advised her to make a realistic timetable (13) ________ turn off unnecessary notifications. Mai also joined the arts and crafts club; (14) ________, she began to relax and make new friends. She now asks for help when she needs it; (15) ________, her problems might become more serious.",
+                q: "Question 11 (PASSAGE 3)",
+                options: ["leisure", "pressure", "scenery", "livestock"],
+                correct: 1,
+                exp: `1. Phân tích cụm từ: "under a lot of pressure" (chịu nhiều áp lực).
+2. Dịch câu: "Trước kỳ thi giữa kỳ, Mai cảm thấy chịu rất nhiều áp lực."
+3. Tại sao chọn B? 'Pressure' khớp với tâm lý thi cử.
+4. Tại sao A, C, D sai? A là sự thư thả; C là phong cảnh; D là gia súc (đều sai ý nghĩa).`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 3: DEALING WITH STRESS",
+                type: "cloze",
+                passage: "Before the midterm tests, Mai felt under a lot of pressure. She stayed up late, (12) ________ she became tired and impatient...",
+                q: "Question 12 (PASSAGE 3)",
+                options: ["so", "but", "or", "for"],
+                correct: 0,
+                exp: `1. Phân tích liên từ chỉ kết quả:
+2. Dịch câu: "Cô ấy thức khuya, vì vậy cô ấy trở nên mệt mỏi và mất kiên nhẫn."
+3. Tại sao chọn A? 'so' chỉ kết quả của việc thức khuya.
+4. Tại sao B, C, D sai? Không thể hiện quan hệ nguyên nhân - kết quả.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 3: DEALING WITH STRESS",
+                type: "cloze",
+                passage: "Before the midterm tests... The school counsellor advised her to make a realistic timetable (13) ________ turn off unnecessary notifications...",
+                q: "Question 13 (PASSAGE 3)",
+                options: ["but", "or", "and", "however"],
+                correct: 2,
+                exp: `1. Phân tích liên từ bổ sung thông tin:
+2. Dịch câu: "Tư vấn viên khuyên cô ấy lập thời gian biểu thực tế VÀ tắt các thông báo không cần thiết."
+3. Tại sao chọn C? 'and' nối hai hành động khuyên nên làm song song.
+4. Tại sao A, B, D sai? Không mang ý nghĩa bổ sung thông tin song hành.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 3: DEALING WITH STRESS",
+                type: "cloze",
+                passage: "Before the midterm tests... Mai also joined the arts and crafts club; (14) ________, she began to relax and make new friends...",
+                q: "Question 14 (PASSAGE 3)",
+                options: ["therefore", "otherwise", "but", "for"],
+                correct: 0,
+                exp: `1. Phân tích trạng từ liên kết chỉ kết quả đứng sau dấu (;) và trước dấu (,):
+2. Dịch câu: "Mai cũng tham gia CLB thủ công; do đó, cô ấy bắt đầu thư giãn và kết bạn mới."
+3. Tại sao chọn A? 'therefore' (do đó) thể hiện kết quả tích cực của việc tham gia CLB.
+4. Tại sao B, C, D sai? 'otherwise' (nếu không thì); 'but' (nhưng); 'for' (vì) đều sai mối quan hệ logic.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 3: DEALING WITH STRESS",
+                type: "cloze",
+                passage: "Before the midterm tests... She now asks for help when she needs it; (15) ________, her problems might become more serious.",
+                q: "Question 15 (PASSAGE 3)",
+                options: ["however", "otherwise", "and", "so"],
+                correct: 1,
+                exp: `1. Phân tích:
+2. Dịch câu: "Bây giờ cô ấy tìm kiếm sự giúp đỡ khi cần; nếu không thì, các vấn đề của cô ấy có thể trở nên nghiêm trọng hơn."
+3. Tại sao chọn B? 'otherwise' (nếu không thì) diễn tả giả định hậu quả nếu không chịu hỏi xin sự giúp đỡ.
+4. Tại sao A, C, D sai? Sai ý nghĩa giả định hậu quả.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 4: A SCHOOL PROJECT",
+                type: "cloze",
+                passage: "Students at Green Valley School created an online project about traditional village life. First, they visited a local farm and recorded short interviews. They asked the farmers for permission before (16) ________ the videos. The students then added captions, (17) ________ more people could understand the content. The project was useful; (18) ________, the students still limited their screen time to avoid staying online too long. They also met every Saturday to discuss their work face to face. By the end, they had learnt practical skills and (19) ________ stronger friendships. The teacher hopes (20) ________ a similar project next term.",
+                q: "Question 16 (PASSAGE 4)",
+                options: ["upload", "uploading", "to uploaded", "uploads"],
+                correct: 1,
+                exp: `1. Phân tích: Sau giới từ 'before' động từ phải ở dạng V-ing.
+2. Dịch câu: "Họ xin phép các bác nông dân trước khi tải các đoạn video lên."
+3. Tại sao chọn B? Danh động từ 'uploading' đi sau giới từ 'before'.
+4. Tại sao A, C, D sai? Sai quy tắc chia động từ sau giới từ.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 4: A SCHOOL PROJECT",
+                type: "cloze",
+                passage: "Students at Green Valley School... The students then added captions, (17) ________ more people could understand the content...",
+                q: "Question 17 (PASSAGE 4)",
+                options: ["so", "but", "otherwise", "for"],
+                correct: 0,
+                exp: `1. Phân tích liên từ chỉ mục đích/kết quả:
+2. Dịch câu: "Các học sinh sau đó thêm phụ đề, vì vậy/để nhiều người hơn có thể hiểu nội dung."
+3. Tại sao chọn A? 'so' chỉ mục đích/kết quả của việc thêm phụ đề.
+4. Tại sao B, C, D sai? Lạc logic nghĩa.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 4: A SCHOOL PROJECT",
+                type: "cloze",
+                passage: "Students at Green Valley School... The project was useful; (18) ________, the students still limited their screen time...",
+                q: "Question 18 (PASSAGE 4)",
+                options: ["therefore", "however", "so", "and"],
+                correct: 1,
+                exp: `1. Phân tích sự tương phản: Dự án hữu ích nhưng học sinh vẫn giới hạn thời gian dùng máy tính.
+2. Dịch câu: "Dự án rất hữu ích; tuy nhiên, các học sinh vẫn giới hạn thời gian nhìn màn hình..."
+3. Tại sao chọn B? 'however' chỉ sự nhượng bộ/tương phản.
+4. Tại sao A, C, D sai? Không thể hiện được sự đối lập.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 4: A SCHOOL PROJECT",
+                type: "cloze",
+                passage: "Students at Green Valley School... By the end, they had learnt practical skills and (19) ________ stronger friendships...",
+                q: "Question 19 (PASSAGE 4)",
+                options: ["build", "building", "built", "builds"],
+                correct: 2,
+                exp: `1. Phân tích ngữ pháp: Động từ nối sau liên từ 'and' đồng dạng với 'had learnt' (Thì quá khứ hoàn thành: had + V3/ed). Ở đây rút gọn 'had': "had learnt... and built...".
+2. Dịch câu: "Đến cuối cùng, họ đã học được các kỹ năng thực tế và xây dựng tình bạn bền chặt hơn."
+3. Tại sao chọn C? 'built' là dạng V3 của 'build'.
+4. Tại sao A, B, D sai? Sai thì của động từ hòa hợp song song với 'learnt'.`
+            },
+            {
+                exercise: "EXERCISE 5. CLOZE TESTS – PASSAGE 4: A SCHOOL PROJECT",
+                type: "cloze",
+                passage: "Students at Green Valley School... The teacher hopes (20) ________ a similar project next term.",
+                q: "Question 20 (PASSAGE 4)",
+                options: ["organise", "organising", "to organise", "organised"],
+                correct: 2,
+                exp: `1. Phân tích cấu trúc: "hope + TO V-inf" (hy vọng làm gì trong tương lai).
+2. Dịch câu: "Giáo viên hy vọng tổ chức một dự án tương tự vào kỳ tới."
+3. Tại sao chọn C? Sau 'hope' là động từ nguyên thể có 'to' -> 'to organise'.
+4. Tại sao A, B, D sai? Sai cấu trúc động từ đi kèm sau 'hope'.`
+            }
+        ];
+
+        // Global quiz state
+        let quizData = [];
+        let userAnswers = {}; // key: questionIndex, value: selectedOptionIndex
+        let totalAnswered = 0;
+        let score = 0;
+
+        // Array Shuffle Helper (Fisher-Yates)
+        function shuffleArray(array) {
+            let currentIndex = array.length, randomIndex;
+            while (currentIndex !== 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+            }
+            return array;
+        }
+
+        // Initialize quiz data and shuffle option order while maintaining correct mappings
+        function initQuizData() {
+            quizData = rawQuestions.map((q, idx) => {
+                // Create object copies of options
+                let originalOptions = q.options.map((opt, oIdx) => ({
+                    text: opt,
+                    isCorrect: oIdx === q.correct
+                }));
+
+                // Shuffle options
+                let shuffled = shuffleArray([...originalOptions]);
+                let newCorrectIndex = shuffled.findIndex(item => item.isCorrect);
+
+                return {
+                    id: idx,
+                    exercise: q.exercise,
+                    type: q.type,
+                    signType: q.signType,
+                    noticeTitle: q.noticeTitle,
+                    noticeBody: q.noticeBody,
+                    passage: q.passage,
+                    q: q.q,
+                    options: shuffled.map(item => item.text),
+                    correct: newCorrectIndex,
+                    exp: q.exp
+                };
+            });
+        }
+
+        // SVG Graphics generator for road signs
+        function renderSignSVG(type) {
+            switch(type) {
+                case 'SILENCE':
+                    return `<div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-3 bg-red-100 border-4 border-red-500 rounded-full flex flex-col items-center justify-center p-2 text-red-600 shadow-md">
+                        <i class="fa-solid fa-volume-xmark text-3xl sm:text-4xl"></i>
+                        <span class="text-[10px] font-black uppercase mt-1">GIỮ YÊN LẶNG</span>
+                    </div>`;
+                case 'PHONE_SILENT':
+                    return `<div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-3 bg-amber-100 border-4 border-amber-500 rounded-2xl flex flex-col items-center justify-center p-2 text-amber-700 shadow-md">
+                        <i class="fa-solid fa-mobile-screen-button text-3xl sm:text-4xl"></i>
+                        <span class="text-[10px] font-black uppercase mt-1">TẮT CHUÔNG</span>
+                    </div>`;
+                case 'NO_BULLYING':
+                    return `<div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-3 bg-red-50 border-4 border-red-600 rounded-full flex flex-col items-center justify-center p-2 text-red-600 shadow-md">
+                        <i class="fa-solid fa-hand-stop text-3xl sm:text-4xl"></i>
+                        <span class="text-[10px] font-black uppercase mt-1 text-center leading-tight">CẤM BẮT NẠT</span>
+                    </div>`;
+                case 'BOOTS':
+                    return `<div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-3 bg-blue-100 border-4 border-blue-600 rounded-2xl flex flex-col items-center justify-center p-2 text-blue-700 shadow-md">
+                        <i class="fa-solid fa-shoe-prints text-3xl sm:text-4xl"></i>
+                        <span class="text-[10px] font-black uppercase mt-1 text-center">GIÀY BẢO HỘ</span>
+                    </div>`;
+                case 'NO_FEEDING':
+                    return `<div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-3 bg-orange-100 border-4 border-orange-500 rounded-full flex flex-col items-center justify-center p-2 text-orange-600 shadow-md">
+                        <i class="fa-solid fa-ban text-3xl sm:text-4xl"></i>
+                        <span class="text-[10px] font-black uppercase mt-1 text-center leading-tight">CẤM CHO ĂN</span>
+                    </div>`;
+                case 'NO_PHOTO':
+                    return `<div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-3 bg-red-100 border-4 border-red-500 rounded-full flex flex-col items-center justify-center p-2 text-red-600 shadow-md">
+                        <i class="fa-solid fa-camera-retro text-3xl sm:text-4xl"></i>
+                        <span class="text-[10px] font-black uppercase mt-1">CẤM CHỤP ẢNH</span>
+                    </div>`;
+                case 'NO_TOUCH':
+                    return `<div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-3 bg-red-100 border-4 border-red-500 rounded-full flex flex-col items-center justify-center p-2 text-red-600 shadow-md">
+                        <i class="fa-solid fa-hand text-3xl sm:text-4xl"></i>
+                        <span class="text-[10px] font-black uppercase mt-1">CẤM SỜ</span>
+                    </div>`;
+                default:
+                    return `<div class="w-24 h-24 mx-auto mb-3 bg-purple-100 rounded-full flex items-center justify-center text-purple-600"><i class="fa-solid fa-circle-info text-3xl"></i></div>`;
+            }
+        }
+
+        // Render Notice / Announcement badge card
+        function renderNoticeCard(title, body) {
+            return `
+            <div class="mb-4 bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 shadow-sm relative overflow-hidden">
+                <div class="absolute -right-4 -top-4 w-12 h-12 bg-amber-200 rounded-full opacity-50"></div>
+                <div class="flex items-center gap-2 text-amber-800 font-black text-sm uppercase tracking-wide mb-1">
+                    <i class="fa-solid fa-bullhorn text-amber-600"></i>
+                    <span>${title}</span>
+                </div>
+                <div class="text-xs sm:text-sm text-gray-700 font-bold leading-relaxed">
+                    ${body}
+                </div>
+            </div>`;
+        }
+
+        // Render Cloze Test Passage Context box
+        function renderPassageCard(passage) {
+            return `
+            <div class="mb-4 bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-4 text-xs sm:text-sm text-indigo-950 font-bold leading-relaxed shadow-sm">
+                <div class="text-indigo-600 font-extrabold uppercase text-[11px] mb-1 flex items-center gap-1.5">
+                    <i class="fa-solid fa-book-open"></i> Đoạn văn đọc hiểu / Điền từ:
+                </div>
+                ${passage}
+            </div>`;
+        }
+
+        // Render all questions to DOM
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            let html = '';
+            let currentExercise = '';
+
+            quizData.forEach((q, index) => {
+                // Section Divider Header
+                if (q.exercise !== currentExercise) {
+                    currentExercise = q.exercise;
+                    html += `
+                    <div class="mt-10 mb-6 bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-4 rounded-2xl shadow-lg flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center font-bold text-sm">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </div>
+                        <h2 class="text-base sm:text-lg font-black tracking-wide">${currentExercise}</h2>
+                    </div>`;
+                }
+
+                // Question Card Header
+                html += `
+                <div id="card-q-${index}" class="bg-white rounded-3xl p-5 sm:p-6 shadow-xl border-2 border-gray-100 transition-all duration-300">
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <span class="bg-purple-100 text-purple-800 text-xs font-black px-3 py-1 rounded-full">
+                            Câu ${index + 1} / 120
+                        </span>
+                        <span id="badge-q-${index}" class="hidden text-xs font-black px-3 py-1 rounded-full">
+                            --
+                        </span>
+                    </div>`;
+
+                // Render Visual Sign or Notice if applicable
+                if (q.type === 'sign' && q.signType) {
+                    html += renderSignSVG(q.signType);
+                } else if (q.type === 'notice' && q.noticeTitle) {
+                    html += renderNoticeCard(q.noticeTitle, q.noticeBody);
+                } else if (q.type === 'cloze' && q.passage) {
+                    html += renderPassageCard(q.passage);
+                }
+
+                // Question Title Text
+                html += `
+                    <h3 class="text-base sm:text-lg font-extrabold text-gray-800 mb-4 leading-snug">
+                        ${q.q}
+                    </h3>`;
+
+                // Answer Option Buttons Grid
+                html += `<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">`;
+                const labels = ['A', 'B', 'C', 'D'];
+                q.options.forEach((opt, optIdx) => {
+                    html += `
+                    <button id="btn-${index}-${optIdx}" onclick="selectAnswer(${index}, ${optIdx})" 
+                            class="option-btn text-left p-3.5 sm:p-4 rounded-2xl font-bold text-xs sm:text-sm text-gray-700 bg-slate-50 flex items-start gap-3 w-full">
+                        <span class="w-6 h-6 rounded-lg bg-white border border-gray-300 text-gray-600 flex items-center justify-center text-xs font-black shrink-0 shadow-sm">
+                            ${labels[optIdx]}
+                        </span>
+                        <span class="pt-0.5 leading-snug">${opt}</span>
+                    </button>`;
+                });
+                html += `</div>`;
+
+                // Hidden Detailed Explanation Container
+                html += `
+                    <div id="exp-q-${index}" class="hidden mt-4 pt-4 border-t-2 border-dashed border-gray-200 bg-amber-50/70 p-4 rounded-2xl">
+                        <div class="flex items-center gap-2 text-amber-800 font-black text-sm mb-2">
+                            <i class="fa-solid fa-lightbulb text-amber-500 text-base"></i>
+                            <span>GIẢI THÍCH CHI TIẾT CỦA CÔ LÊ HẰNG:</span>
+                        </div>
+                        <div class="text-xs sm:text-sm text-gray-700 leading-relaxed font-semibold whitespace-pre-line">
+                            ${q.exp}
+                        </div>
+                    </div>
+                </div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Handle option selection
+        function selectAnswer(qIdx, selectedOptIdx) {
+            if (userAnswers.hasOwnProperty(qIdx)) return; // Already answered
+
+            userAnswers[qIdx] = selectedOptIdx;
+            totalAnswered++;
+
+            const q = quizData[qIdx];
+            const isCorrect = (selectedOptIdx === q.correct);
+
+            const card = document.getElementById(`card-q-${qIdx}`);
+            const badge = document.getElementById(`badge-q-${qIdx}`);
+            const expBox = document.getElementById(`exp-q-${qIdx}`);
+            const selectedBtn = document.getElementById(`btn-${qIdx}-${selectedOptIdx}`);
+            const correctBtn = document.getElementById(`btn-${qIdx}-${q.correct}`);
+
+            // Disable all buttons in this question
+            for (let i = 0; i < q.options.length; i++) {
+                const btn = document.getElementById(`btn-${qIdx}-${i}`);
+                if (btn) btn.disabled = true;
+            }
+
+            if (isCorrect) {
+                score++;
+                playDingSound();
+                selectedBtn.classList.add('option-correct');
+                badge.textContent = '✓ Đúng rồi!';
+                badge.className = 'text-xs font-black px-3 py-1 rounded-full bg-green-100 text-green-800 border border-green-300';
+
+                // Confetti mini burst
+                try {
+                    confetti({
+                        particleCount: 25,
+                        spread: 60,
+                        origin: { y: 0.7 }
+                    });
+                } catch(e) {}
+            } else {
+                playWrongSound();
+                selectedBtn.classList.add('option-wrong');
+                correctBtn.classList.add('option-correct');
+                badge.textContent = '✗ Chưa đúng!';
+                badge.className = 'text-xs font-black px-3 py-1 rounded-full bg-red-100 text-red-800 border border-red-300';
+            }
+
+            badge.classList.remove('hidden');
+
+            // Slide down explanation immediately
+            expBox.classList.remove('hidden');
+
+            // Update live sticky bar
+            document.getElementById('progress-text').textContent = `Đã hoàn thành: ${totalAnswered} / 120`;
+            document.getElementById('live-score').textContent = `${score} đ`;
+        }
+
+        // Submit quiz and view modal breakdown
+        function submitQuiz() {
+            const modal = document.getElementById('result-modal');
+            const modalScore = document.getElementById('modal-score');
+            const modalPercentage = document.getElementById('modal-percentage');
+            const modalFeedback = document.getElementById('modal-feedback');
+            const modalIcon = document.getElementById('modal-icon');
+
+            modalScore.textContent = `${score} / 120`;
+            const percentage = Math.round((score / 120) * 100);
+            modalPercentage.textContent = `Tỷ lệ chính xác: ${percentage}%`;
+
+            if (percentage < 50) {
+                modalIcon.textContent = '💪';
+                modalFeedback.textContent = "Điểm lần này chưa cao lắm, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!";
+            } else if (percentage <= 80) {
+                modalIcon.textContent = '🌟';
+                modalFeedback.textContent = "Con đã có tiến bộ khá ổn rồi, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!";
+            } else {
+                modalIcon.textContent = '🏆';
+                modalFeedback.textContent = "Làm tốt lắm, con cố gắng ring điểm 10 ở lần sau nha!";
+                try {
+                    confetti({ particleCount: 120, spread: 100, origin: { y: 0.5 } });
+                } catch(e) {}
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('result-modal').classList.add('hidden');
+        }
+
+        // On window load initialization
+        window.onload = function() {
+            initQuizData();
+            renderQuiz();
+        };
+    </script>
+</body>
+</html>
